@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import Hero2 from "@/components/Hero2/Hero2";
 import { Stats } from "@/components/Stats/Stats";
-import Banner from "@/components/Banner/Banner";
 import { Testimonial } from "@/components/Testimonials/Testimonial";
 
 import AOS from "aos";
@@ -63,8 +62,6 @@ export default function CardWithForm() {
       <WhyChoose />
 
       <Booknow />
-
-      <Banner />
 
       <Testimonial />
       <GoogleMaps />

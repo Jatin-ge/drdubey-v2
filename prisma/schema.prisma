@@ -211,3 +211,12 @@ model Image {
   imageUrl String
   description String
 }
+
+model Event {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  videoLink   String?  // Optional YouTube video link
+  imageUrl    String?  // Optional image URL
+  description String   // Add description field
+  createdAt   DateTime @default(now())
+}
