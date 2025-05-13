@@ -173,6 +173,7 @@ const Events = () => {
                   <span>{new Date(event.createdAt).toLocaleDateString()}</span>
                 </div>
               </div>
+              
             </motion.div>
           ))}
         </div>
