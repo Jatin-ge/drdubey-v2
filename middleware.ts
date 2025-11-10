@@ -14,6 +14,7 @@ export default authMiddleware({
     "/gallery",
     "/contact",
     "/youtube",
+    "/videos",
     "/services(.*)",
     "/blogs(.*)"
 
