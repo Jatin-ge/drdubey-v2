@@ -26,6 +26,7 @@ import { db } from "@/lib/db";
 import Certificate2 from "@/components/Certificate/Certificate2";
 import AchievementCollage from "@/components/Achievements/AchievementCollage";
 import UKHonour from "@/components/UKHonour/UKHonour";
+import ETAward from "@/components/ETAward/ETAward";
 
 export default function CardWithForm() {
   React.useEffect(() => {
@@ -53,6 +54,7 @@ export default function CardWithForm() {
       <Card1 />
       <Stats />
       <UKHonour />
+      <ETAward />
       <AchievementCollage />
       <Hero2 />
       <Certificate2 />
