@@ -1,9 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 
 const UKHonour = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-white to-[#f0f4ff]">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -41,7 +55,11 @@ const UKHonour = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="relative w-full rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center" style={{ minHeight: '400px', maxHeight: '600px' }}>
+              <div 
+                className="relative w-full rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" 
+                style={{ minHeight: '400px', maxHeight: '600px' }}
+                onClick={() => openModal("/assets/images/uk-honor-1.jpeg")}
+              >
                 <Image
                   src="/assets/images/uk-honor-1.jpeg"
                   alt="UK Honour Award 1"
@@ -51,7 +69,11 @@ const UKHonour = () => {
                   style={{ maxWidth: '100%', maxHeight: '100%' }}
                 />
               </div>
-              <div className="relative w-full rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center" style={{ minHeight: '400px', maxHeight: '600px' }}>
+              <div 
+                className="relative w-full rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center cursor-pointer hover:opacity-90 transition-opacity" 
+                style={{ minHeight: '400px', maxHeight: '600px' }}
+                onClick={() => openModal("/assets/images/uk-honor-2.jpeg")}
+              >
                 <Image
                   src="/assets/images/uk-honor-2.jpeg"
                   alt="UK Honour Award 2"
@@ -65,6 +87,23 @@ const UKHonour = () => {
           </div>
         </motion.div>
       </div>
+
+      <Dialog open={selectedImage !== null} onOpenChange={closeModal}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] w-auto h-auto p-0 bg-transparent border-none">
+          {selectedImage && (
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src={selectedImage}
+                alt="UK Honour Award Full Size"
+                width={1200}
+                height={900}
+                className="object-contain max-w-full max-h-[95vh] rounded-lg"
+                style={{ maxWidth: '100%', maxHeight: '95vh' }}
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
