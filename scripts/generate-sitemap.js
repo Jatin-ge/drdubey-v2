@@ -77,8 +77,13 @@ async function generateSitemap() {
     fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), sitemap);
     console.log(`Sitemap generated with ${allLinks.length} URLs (${dynamicLinks.length} dynamic).`);
   } catch (error) {
-    console.error('Sitemap generation failed:', error);
-    process.exit(1);
+    console.error('Sitemap generation failed (DB unavailable), generating static-only sitemap:', error.message);
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${staticLinks.map(makeUrl).join('')}
+</urlset>`;
+    fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), sitemap);
+    console.log(`Static-only sitemap generated with ${staticLinks.length} URLs.`);
   } finally {
     await prisma.$disconnect();
   }
