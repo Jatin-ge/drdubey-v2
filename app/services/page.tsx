@@ -1,6 +1,15 @@
+import { generatePageMetadata } from "@/lib/seo.config";
 import React from "react";
 
 import PsychologyIcon from "@mui/icons-material/Psychology";
+
+export const revalidate = 3600;
+
+export const metadata = generatePageMetadata({
+  title: "Joint Replacement Services | Dr. Dheeraj Dubay Jaipur",
+  description: "Expert knee replacement, hip replacement, computer navigation surgery and minimally invasive joint replacement in Jaipur by Dr. Dheeraj Dubay.",
+  slug: "services",
+});
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";

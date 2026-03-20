@@ -1,6 +1,15 @@
+import { generatePageMetadata } from "@/lib/seo.config";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/navbar";
 import GTM from "@/utils/GTM";
+
+export const revalidate = 3600;
+
+export const metadata = generatePageMetadata({
+  title: "Surgery & Educational Videos | Dr. Dheeraj Dubay",
+  description: "Watch educational videos about knee replacement, hip replacement and minimally invasive surgery techniques by Dr. Dheeraj Dubay.",
+  slug: "videos",
+});
 
 const Videos = async () => {
   return (

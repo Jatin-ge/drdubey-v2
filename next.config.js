@@ -18,7 +18,15 @@ const nextConfig = {
         protocol: "https",
         hostname: "aba57f763df38f62713ad7584ba232dc.r2.cloudflarestorage.com",
         pathname: '/drdubey-events-media/**',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: '*.r2.cloudflarestorage.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pub-*.r2.dev',
+      },
     ],
     domains: ['placehold.co'],
   },

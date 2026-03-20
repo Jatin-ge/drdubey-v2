@@ -1,4 +1,13 @@
+import { generatePageMetadata } from "@/lib/seo.config";
 import Footer from "@/components/Footer/Footer";
+
+export const revalidate = 3600;
+
+export const metadata = generatePageMetadata({
+  title: "Achievements & Awards Gallery | Dr. Dheeraj Dubay",
+  description: "View Dr. Dheeraj Dubay's awards, achievements and recognitions including Forbes World Record, ET Inspiring Leaders 2025 and UK Honour Recognition.",
+  slug: "gallery",
+});
 
 import Gallery from "@/components/Gallery4/NewGallery";
 import Navbar from "@/components/Navbar/navbar";

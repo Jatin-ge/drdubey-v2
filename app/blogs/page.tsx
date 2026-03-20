@@ -1,6 +1,15 @@
+import { generatePageMetadata } from "@/lib/seo.config";
 import React from "react";
 
 import PsychologyIcon from "@mui/icons-material/Psychology";
+
+export const revalidate = 3600;
+
+export const metadata = generatePageMetadata({
+  title: "Orthopedic Health Blog | Dr. Dheeraj Dubay",
+  description: "Expert articles on joint replacement, knee surgery, hip surgery recovery and orthopedic health by Dr. Dheeraj Dubay, Jaipur.",
+  slug: "blogs",
+});
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";

@@ -1,4 +1,13 @@
+import { generatePageMetadata } from "@/lib/seo.config";
 import Footer from "@/components/Footer/Footer";
+
+export const revalidate = 3600;
+
+export const metadata = generatePageMetadata({
+  title: "Patient Testimonials & Videos | Dr. Dheeraj Dubay",
+  description: "Watch patient testimonials and surgery videos by Dr. Dheeraj Dubay, Forbes World Record holder for joint replacement surgeries.",
+  slug: "youtube",
+});
 import Navbar from "@/components/Navbar/navbar";
 import { YoutubePlayer } from "@/components/ui/video";
 import { db } from "@/lib/db";
