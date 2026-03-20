@@ -1,7 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 import React from "react";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export const metadata = generatePageMetadata({
   title: "Joint Replacement Services | Dr. Dheeraj Dubay Jaipur",
@@ -15,7 +15,12 @@ import GTM from "@/utils/GTM";
 type Props = {};
 
 const Service = async (props: Props) => {
-  const services = await db.services.findMany();
+  let services: any[] = [];
+  try {
+    services = await db.services.findMany();
+  } catch {
+    services = [];
+  }
 
   console.log(services);
 

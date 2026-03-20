@@ -1,7 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 import Section1 from "@/components/AboutUs/Section1";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export const metadata = generatePageMetadata({
   title: "About Dr. Dheeraj Dubay | Joint Replacement Specialist Jaipur",
@@ -19,9 +19,12 @@ import React from "react";
 type Props = {};
 
 const page = async (props: Props) => {
-  const newimages = await db.image.findMany({
-   
-  });
+  let newimages: any[] = [];
+  try {
+    newimages = await db.image.findMany({});
+  } catch {
+    newimages = [];
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">

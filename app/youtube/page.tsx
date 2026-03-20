@@ -1,7 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 import Footer from "@/components/Footer/Footer";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export const metadata = generatePageMetadata({
   title: "Patient Testimonials & Videos | Dr. Dheeraj Dubay",
@@ -14,7 +14,12 @@ import { db } from "@/lib/db";
 import GTM from "@/utils/GTM";
 
 const Youtube = async () => {
-  const youtube = await db.youTube.findMany({});
+  let youtube: any[] = [];
+  try {
+    youtube = await db.youTube.findMany({});
+  } catch {
+    youtube = [];
+  }
   return (
     <>
       <head>

@@ -1,6 +1,6 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 import HomePageContent from "@/components/HomePageContent";
 import { PhysicianJsonLd, MedicalBusinessJsonLd } from "@/components/seo/JsonLd";
 import { db } from "@/lib/db";
@@ -8,11 +8,16 @@ import { db } from "@/lib/db";
 export const metadata = generatePageMetadata({});
 
 export default async function CardWithForm() {
-  const achievements = await db.achievement.findMany({
-    where: { isFeatured: true },
-    orderBy: { featuredOrder: "asc" },
-    take: 6,
-  });
+  let achievements: any[] = [];
+  try {
+    achievements = await db.achievement.findMany({
+      where: { isFeatured: true },
+      orderBy: { featuredOrder: "asc" },
+      take: 6,
+    });
+  } catch {
+    achievements = [];
+  }
 
   const featuredAchievements = achievements.map((a) => ({
     id: a.id,

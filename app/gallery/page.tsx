@@ -1,7 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 import Footer from "@/components/Footer/Footer";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export const metadata = generatePageMetadata({
   title: "Achievements & Awards Gallery | Dr. Dheeraj Dubay",
@@ -18,7 +18,12 @@ import React from "react";
 type Props = {};
 
 const page = async (props: Props) => {
-  const images = await db.image.findMany();
+  let images: any[] = [];
+  try {
+    images = await db.image.findMany();
+  } catch {
+    images = [];
+  }
   return (
     <>
       <head>
