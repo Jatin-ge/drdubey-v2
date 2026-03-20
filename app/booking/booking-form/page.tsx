@@ -1,9 +1,11 @@
+import { v4 as uuidv4 } from "uuid";
 import Appointment from "@/components/ui/appointment-form";
 import GTM from "@/utils/GTM";
 
 export const dynamic = "force-dynamic";
 
 const BillboardPage = async () => {
+  const userId = uuidv4();
   return (
     <>
       <head>
@@ -17,7 +19,7 @@ const BillboardPage = async () => {
       </head>
       <div className="flex-col">
         <div className="flex-1 space-y-4 p-8 pt-6">
-          <Appointment name="" email="" userId="" />
+          <Appointment name="" email="" userId={userId} />
         </div>
       </div>
     </>
