@@ -192,18 +192,22 @@ model Services {
 
 
 model Blogs {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  title    String
-  slug  String? 
-  subtitle1 String
-  content1     String
-  image1    String
-  subtitle2 String?
-  content2     String?
-  image2  String?
-  metaTitle     String?
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  title           String
+  slug            String?
+  subtitle1       String
+  content1        String
+  image1          String
+  subtitle2       String?
+  content2        String?
+  image2          String?
+  metaTitle       String?
   metaDescription String?
-  metaKeywords  String?
+  metaKeywords    String?
+  isPublished     Boolean  @default(false)
+  publishedAt     DateTime?
+  coverImage      String?
+  tags            String[]
 }
 
 model Image {
@@ -219,4 +223,18 @@ model Event {
   imageUrl    String?  // Optional image URL
   description String   // Add description field
   createdAt   DateTime @default(now())
+}
+model Achievement {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  title           String
+  slug            String   @unique
+  category        String
+  date            DateTime
+  description     String
+  imageUrl        String
+  isFeatured      Boolean  @default(false)
+  featuredOrder   Int?
+  metaTitle       String?
+  metaDescription String?
+  createdAt       DateTime @default(now())
 }

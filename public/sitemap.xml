@@ -22,6 +22,11 @@
       <priority>0.7</priority>
     </url>
     <url>
+      <loc>https://www.drdubay.in/achievements</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
       <loc>https://www.drdubay.in/gallery</loc>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
@@ -60,45 +65,5 @@
       <loc>https://www.drdubay.in/services/revision-hip-surgery</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
-    </url>
-    <url>
-      <loc>https://www.drdubay.in/blogs/total-knee-replacement</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-      <loc>https://www.drdubay.in/blogs/Joint-Replacement-Surgery-A-Step-by-Step-Guide</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-      <loc>https://www.drdubay.in/blogs/joint-replacement-recovery-tips</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-      <loc>https://www.drdubay.in/blogs/signs-need-joint-replacement-surgery</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-      <loc>https://www.drdubay.in/blogs/hip-pain-causes-hip-replacement-jaipur</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-      <loc>https://www.drdubay.in/blogs/hip-replacement-surgery-jaipur-dr-dheeraj-dubay</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-      <loc>https://www.drdubay.in/blogs/foods-for-joint-health-inflammation-relief</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
-    </url>
-    <url>
-      <loc>https://www.drdubay.in/blogs/how-to-prepare-for-knee-replacement-surgery</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.7</priority>
     </url>
 </urlset>
