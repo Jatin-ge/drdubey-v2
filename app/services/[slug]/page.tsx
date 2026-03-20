@@ -1,92 +1,203 @@
-import Footer from "@/components/Footer/Footer";
-import Navbar from "@/components/Navbar/navbar";
-import { db } from "@/lib/db";
-import Head from "next/head";
-import Image from "next/image";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
-import React from "react";
+import Navbar from "@/components/Navbar/navbar";
+import Footer from "@/components/Footer/Footer";
+import { defaultSEO } from "@/lib/seo.config";
+import { db } from "@/lib/db";
 
-const page = async ({ params }: { params: { slug: string } }) => {
-  console.log("the slug is ", params.slug);
+export const revalidate = 3600;
 
-  const data = await db.services.findFirst({
-    where: {
-      slug: params.slug,
+async function getServiceBySlug(slug: string) {
+  try {
+    return await db.services.findFirst({ where: { slug } });
+  } catch {
+    return null;
+  }
+}
+
+async function getAllServices() {
+  try {
+    return await db.services.findMany();
+  } catch {
+    return [];
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const service = await getServiceBySlug(params.slug);
+
+  if (!service) {
+    return { title: "Service Not Found" };
+  }
+
+  const title = service.metaTitle || service.title;
+  const description = service.metaDescription || service.subtitle;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${defaultSEO.siteUrl}/services/${service.slug}`,
     },
-  });
+    openGraph: {
+      title,
+      description,
+      url: `${defaultSEO.siteUrl}/services/${service.slug}`,
+      siteName: defaultSEO.siteName,
+      images: [
+        {
+          url: service.image || `${defaultSEO.siteUrl}/assets/images/hero.png`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [
+        service.image || `${defaultSEO.siteUrl}/assets/images/hero.png`,
+      ],
+    },
+  };
+}
 
-  const allBlogs = await db.services.findMany();
+const ServiceJsonLd = ({ service }: { service: any }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    name: service.title,
+    description: service.metaDescription || service.subtitle,
+    url: `${defaultSEO.siteUrl}/services/${service.slug}`,
+    about: {
+      "@type": "MedicalCondition",
+      name: service.title,
+    },
+    author: {
+      "@type": "Physician",
+      name: "Dr. Dheeraj Dubay",
+      url: defaultSEO.siteUrl,
+    },
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
 
-  console.log("the service is ", data);
+export default async function ServiceDetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const [service, allServices] = await Promise.all([
+    getServiceBySlug(params.slug),
+    getAllServices(),
+  ]);
+
+  if (!service) {
+    notFound();
+  }
 
   return (
     <>
-      <head>
-        <title>{data?.metaTitle || "Default Title"}</title>
-        <meta
-          name="description"
-          content={data?.metaDescription || "Default Description"}
-        />
-        <link rel="icon" href="/assets/images/logonew.png" />
-      </head>
+      <ServiceJsonLd service={service} />
       <Navbar />
-      <div className="container mx-auto">
-        <main className="mt-12">
-          <div className="flex flex-col md:flex-row space-x-0 md:space-x-6 mb-16 ">
-            <div className="left mb-4 lg:mb-0 md:p-4 lg:p-0 w-full md:w-4/7 relative rounded block">
-              <Image
-                src={data?.image || "/assets/images/col2.jpg"}
-                height={900}
-                width={900}
-                alt="img"
-                className="rounded-md object-cover w-[700px] h-[670px]"
-              />
-              <span className="text-green-700 text-sm hidden md:block mt-4">
+      <div className="container mx-auto px-4">
+        <main className="mt-12 mb-16">
+          {/* Breadcrumb */}
+          <div className="mb-6 text-sm text-gray-500">
+            <Link href="/" className="hover:text-primary">
+              Home
+            </Link>
+            {" / "}
+            <Link href="/services" className="hover:text-primary">
+              Services
+            </Link>
+            {" / "}
+            <span className="text-gray-700">{service.title}</span>
+          </div>
+
+          <div className="flex flex-col md:flex-row space-x-0 md:space-x-8">
+            {/* Main content */}
+            <div className="w-full md:w-4/6">
+              {service.image && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="rounded-md object-cover w-full max-h-[480px] mb-6"
+                />
+              )}
+
+              <span className="text-green-700 text-sm block mb-2">
                 Dr. Dheeraj Dubay
               </span>
-              <h1 className="text-gray-800 dark:text-gray-200 text-4xl font-bold mt-2 mb-2 leading-tight">
-                {data?.title}
+
+              <h1 className="text-gray-800 text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                {service.title}
               </h1>
-              <p
-                style={{ whiteSpace: "pre-wrap" }}
-                className="text-xl dark:text-gray-400"
-              >
-                {data?.blog}
+
+              <p className="text-gray-600 text-lg font-medium mb-6">
+                {service.subtitle}
               </p>
+
+              {/* blog field — rendered as HTML from Quill */}
+              <div
+                className="text-gray-700 text-base leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: service.blog }}
+              />
+
+              <Link
+                href="/services"
+                className="inline-flex items-center gap-2 text-primary font-semibold hover:underline mt-10"
+              >
+                ← Back to all services
+              </Link>
             </div>
 
-            <div className="right w-full md:w-2/3 ">
-              <div className="md:sticky md:top-8  ">
-                <div className=" text-[#EE8A27] font-semibold m-2 text-xl">
-                  recent post
-                </div>
-
-                <div className="rounded w-full flex flex-col  mb-10">
-                  {allBlogs?.map((item: any) => (
-                    // eslint-disable-next-line react/jsx-key
-                    <Link href={`/services/${item.slug}`}>
-                      <div
+            {/* Sidebar — other services */}
+            <div className="w-full md:w-2/6 mt-10 md:mt-0">
+              <div className="md:sticky md:top-8">
+                <p className="text-[#EE8A27] font-semibold text-xl mb-4">
+                  Other Services
+                </p>
+                <div className="flex flex-col gap-4">
+                  {allServices
+                    .filter((s) => s.slug !== service.slug)
+                    .map((item) => (
+                      <Link
                         key={item.id}
-                        className="rounded w-full flex flex-col md:flex-row mb-10"
+                        href={`/services/${item.slug}`}
+                        className="flex gap-3 group"
                       >
-                        <Image
-                          height={250}
-                          width={200}
-                          src={item.image || "/assets/images/contact.jpg"}
-                          alt="img"
-                          className="block md:hidden lg:block rounded-md h-32 w-60  md:h-32 m-4 md:m-0"
-                        />
-                        <div className="bg-white rounded px-4">
-                          <div className="md:mt-0  text-gray-800 font-semibold text-xl mb-2">
+                        {item.image ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-20 h-16 object-cover rounded-md flex-shrink-0"
+                          />
+                        ) : null}
+                        <div>
+                          <p className="text-gray-800 font-semibold text-sm group-hover:text-primary transition-colors line-clamp-2">
                             {item.title}
-                          </div>
-                          <p className=" p-2 pl-0 pt-1 text-sm text-gray-600">
+                          </p>
+                          <p className="text-xs text-gray-500 mt-1 line-clamp-1">
                             {item.subtitle}
                           </p>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
+                      </Link>
+                    ))}
                 </div>
               </div>
             </div>
@@ -96,6 +207,4 @@ const page = async ({ params }: { params: { slug: string } }) => {
       <Footer />
     </>
   );
-};
-
-export default page;
+}
