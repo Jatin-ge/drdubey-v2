@@ -22,8 +22,22 @@ import Certificate2 from "@/components/Certificate/Certificate2";
 import AchievementCollage from "@/components/Achievements/AchievementCollage";
 import UKHonour from "@/components/UKHonour/UKHonour";
 import ETAward from "@/components/ETAward/ETAward";
+import FeaturedAchievementsSection from "@/components/Achievements/FeaturedAchievementsSection";
 
-export default function HomePageContent() {
+type FeaturedAchievement = {
+  id: string;
+  title: string;
+  slug: string;
+  category: string;
+  date: string;
+  imageUrl: string;
+};
+
+interface HomePageContentProps {
+  featuredAchievements?: FeaturedAchievement[];
+}
+
+export default function HomePageContent({ featuredAchievements = [] }: HomePageContentProps) {
   React.useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -43,6 +57,7 @@ export default function HomePageContent() {
       <UKHonour />
       <ETAward />
       <AchievementCollage />
+      <FeaturedAchievementsSection achievements={featuredAchievements} />
       <Hero2 />
       <Certificate2 />
       <Certificate />

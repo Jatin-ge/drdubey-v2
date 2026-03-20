@@ -1,4 +1,4 @@
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { CheckCircle } from "lucide-react";
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -61,7 +61,7 @@ const WhyChoose = () => {
               "Coordinated Care",
             ].map((text, index) => (
               <li key={index} className="flex items-center">
-                <CheckCircleIcon className="mr-3 text-primary" />
+                <CheckCircle className="mr-3 text-primary" />
                 <span className="text-xl md:text-2xl font-medium text-gray-700">
                   {text}
                 </span>

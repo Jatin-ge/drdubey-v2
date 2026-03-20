@@ -1,16 +1,7 @@
-import { S3Client } from "@aws-sdk/client-s3";
+// TODO: R2 presigned URL support requires @aws-sdk/client-s3 and @aws-sdk/s3-request-presigner.
+// These packages have been removed to reduce bundle size. Re-add them and restore this file
+// if private R2 objects need presigned URL access.
+// Public R2 URLs are still supported via next.config.js remotePatterns.
 
-if (!process.env.R2_ACCESS_KEY_ID || !process.env.R2_SECRET_ACCESS_KEY || !process.env.R2_ENDPOINT) {
-  throw new Error('Missing required R2 environment variables');
-}
-
-export const r2Client = new S3Client({
-  region: "auto",
-  endpoint: `https://${process.env.R2_ENDPOINT}`,
-  credentials: {
-    accessKeyId: process.env.R2_ACCESS_KEY_ID,
-    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
-  },
-});
-
-export const R2_BUCKET_NAME = process.env.R2_EVENTS_BUCKET_NAME || 'drdubey-events-media'; 
+export const r2Client = null as any;
+export const R2_BUCKET_NAME = process.env.R2_EVENTS_BUCKET_NAME || 'drdubey-events-media';

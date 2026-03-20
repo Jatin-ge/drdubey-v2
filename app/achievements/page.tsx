@@ -35,7 +35,7 @@ async function getAchievements(): Promise<Achievement[]> {
         { createdAt: "desc" },
       ],
     });
-    return achievements as Achievement[];
+    return achievements.map((a) => ({ ...a, date: a.date.toISOString() })) as Achievement[];
   } catch {
     return [];
   }

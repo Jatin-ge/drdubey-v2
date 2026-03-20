@@ -9,7 +9,7 @@ import config from "./config";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 
-import CancelIcon from "@mui/icons-material/Cancel";
+import { X } from "lucide-react";
 
 import "./bot.css";
 type Props = {};
@@ -28,7 +28,7 @@ const Bot = (props: Props) => {
             className="p-2 flex items-end justify-end"
             onClick={() => toggleShowChat()}
           >
-            <CancelIcon fontSize="large" />
+            <X size={32} />
           </div>
           <Chatbot
             //@ts-ignore
