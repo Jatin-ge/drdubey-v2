@@ -4,15 +4,20 @@ import { Booking } from "@/components/ui/booking";
 import GTM from "@/utils/GTM";
 
 const AppointmentPage = async ({ params }: { params: { city: string } }) => {
-  const city = await db.cities.findUnique({
-    where: {
-      name: params.city,
-    },
-    include: {
-      closeddays: true,
-      days: true,
-    },
-  });
+  let city = null;
+  try {
+    city = await db.cities.findUnique({
+      where: {
+        name: params.city,
+      },
+      include: {
+        closeddays: true,
+        days: true,
+      },
+    });
+  } catch (error) {
+    console.error("[BOOKING_CITY_GET]", error);
+  }
 
   if (!city) {
     return <div>City not Availiable we will be coming soon to ur city</div>;

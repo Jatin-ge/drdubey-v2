@@ -1,7 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 import React from "react";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata = generatePageMetadata({
   title: "Joint Replacement Services | Dr. Dheeraj Dubay Jaipur",

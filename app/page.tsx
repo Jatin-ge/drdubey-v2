@@ -1,6 +1,6 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 import HomePageContent from "@/components/HomePageContent";
 import { PhysicianJsonLd, MedicalBusinessJsonLd } from "@/components/seo/JsonLd";
 import { db } from "@/lib/db";

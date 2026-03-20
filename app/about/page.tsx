@@ -1,7 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 import Section1 from "@/components/AboutUs/Section1";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata = generatePageMetadata({
   title: "About Dr. Dheeraj Dubay | Joint Replacement Specialist Jaipur",

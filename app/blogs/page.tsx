@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer/Footer";
 import { db } from "@/lib/db";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata = generatePageMetadata({
   title: "Orthopedic Health Blog | Dr. Dheeraj Dubay",

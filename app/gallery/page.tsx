@@ -1,7 +1,7 @@
 import { generatePageMetadata } from "@/lib/seo.config";
 import Footer from "@/components/Footer/Footer";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export const metadata = generatePageMetadata({
   title: "Achievements & Awards Gallery | Dr. Dheeraj Dubay",
