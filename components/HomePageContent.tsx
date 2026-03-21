@@ -13,7 +13,6 @@ import WhyChoose from "@/components/WhyChoose/WhyChoose";
 import ReviewCard from "@/components/Carousel/ReviewCard";
 import Booknow from "@/components/Booknow/Booknow";
 import Footer from "@/components/Footer/Footer";
-import Bot from "@/components/Bot/Bot";
 import Navbar from "@/components/Navbar/navbar";
 import GoogleMaps from "@/components/ui/map";
 import Certificate from "@/components/Certificate/Certificate";
@@ -82,7 +81,6 @@ export default function HomePageContent({ featuredAchievements = [], services = 
       <GoogleMaps />
       <Form />
       <Footer />
-      <Bot />
     </div>
   );
 }

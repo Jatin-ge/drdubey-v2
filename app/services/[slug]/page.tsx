@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer/Footer";
 import { defaultSEO } from "@/lib/seo.config";
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { db } from "@/lib/db";
 
 export const revalidate = 3600;
@@ -94,6 +95,35 @@ const ServiceJsonLd = ({ service }: { service: any }) => {
   );
 };
 
+function getServiceFAQs(title: string) {
+  return [
+    {
+      question: `What is ${title}?`,
+      answer: `${title} is a specialized orthopedic procedure performed by Dr. Dheeraj Dubay at Shalby Hospital Jaipur with over 16 years of experience and 24,000+ successful surgeries.`,
+    },
+    {
+      question: `How long does ${title} take?`,
+      answer: `The procedure typically takes 45-90 minutes depending on the complexity. Dr. Dubay is known for his fast-track Zero technique which can complete knee replacement in 10-15 minutes.`,
+    },
+    {
+      question: `What is the recovery time after ${title}?`,
+      answer: `Most patients begin walking within 24 hours. Full recovery typically takes 6-12 weeks with physiotherapy. Dr. Dubay's fast-track rehabilitation program helps patients recover faster.`,
+    },
+    {
+      question: `Is ${title} available in Jaipur?`,
+      answer: `Yes, Dr. Dheeraj Dubay performs ${title} at Shalby Multi-Specialty Hospital, Vaishali Nagar, Jaipur and at Dr. Dubay Hip & Knee Clinic, Vidhyadhar Nagar, Jaipur.`,
+    },
+    {
+      question: `What is the cost of ${title} in Jaipur?`,
+      answer: `The cost varies based on the type of implant and insurance coverage. Dr. Dubay offers transparent pricing and works with TPA/insurance providers. Contact us for a detailed quote.`,
+    },
+    {
+      question: `Why choose Dr. Dheeraj Dubay for ${title}?`,
+      answer: `Dr. Dubay holds the Forbes World Record for most joint replacements in a single day, has performed 24,000+ surgeries over 16 years, and is recognized as one of North India's leading orthopedic surgeons. He uses computer-assisted navigation for superior precision.`,
+    },
+  ];
+}
+
 export default async function ServiceDetailPage({
   params,
 }: {
@@ -108,9 +138,12 @@ export default async function ServiceDetailPage({
     notFound();
   }
 
+  const faqs = getServiceFAQs(service.title);
+
   return (
     <>
       <ServiceJsonLd service={service} />
+      <FaqJsonLd faqs={faqs} />
       <Navbar />
       <div className="container mx-auto px-4">
         <main className="mt-12 mb-16">
@@ -157,6 +190,31 @@ export default async function ServiceDetailPage({
                 dangerouslySetInnerHTML={{ __html: service.blog }}
               />
 
+              {/* FAQ Section */}
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                  Frequently Asked Questions
+                </h2>
+                <div className="space-y-4">
+                  {faqs.map((faq, i) => (
+                    <details
+                      key={i}
+                      className="group border border-gray-200 rounded-lg overflow-hidden"
+                    >
+                      <summary className="flex items-center justify-between p-4 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors font-semibold text-gray-800">
+                        {faq.question}
+                        <span className="ml-4 flex-shrink-0 text-primary group-open:rotate-45 transition-transform">
+                          +
+                        </span>
+                      </summary>
+                      <div className="p-4 text-gray-600 text-sm leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </div>
+
               <Link
                 href="/services"
                 className="inline-flex items-center gap-2 text-primary font-semibold hover:underline mt-10"
@@ -168,6 +226,29 @@ export default async function ServiceDetailPage({
             {/* Sidebar — other services */}
             <div className="w-full md:w-2/6 mt-10 md:mt-0">
               <div className="md:sticky md:top-8">
+                {/* Book Appointment CTA */}
+                <div className="bg-primary text-white rounded-xl p-6 mb-6">
+                  <h3 className="text-lg font-bold mb-2">
+                    Book a Consultation
+                  </h3>
+                  <p className="text-sm opacity-90 mb-4">
+                    Get expert advice from Dr. Dheeraj Dubay for{" "}
+                    {service.title}.
+                  </p>
+                  <Link
+                    href="/booking/jaipur"
+                    className="block text-center bg-white text-primary font-semibold py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    Book Appointment
+                  </Link>
+                  <a
+                    href="tel:+918955373205"
+                    className="block text-center mt-2 text-sm underline opacity-80 hover:opacity-100"
+                  >
+                    Call: +91 8955373205
+                  </a>
+                </div>
+
                 <p className="text-[#EE8A27] font-semibold text-xl mb-4">
                   Other Services
                 </p>
