@@ -1,6 +1,5 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
-import Events from '../../events/page';
 
 export async function GET() {
   try {

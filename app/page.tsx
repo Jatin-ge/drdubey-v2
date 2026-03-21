@@ -9,6 +9,8 @@ export const metadata = generatePageMetadata({});
 
 export default async function CardWithForm() {
   let achievements: any[] = [];
+  let services: any[] = [];
+
   try {
     achievements = await db.achievement.findMany({
       where: { isFeatured: true },
@@ -17,6 +19,12 @@ export default async function CardWithForm() {
     });
   } catch {
     achievements = [];
+  }
+
+  try {
+    services = await db.services.findMany();
+  } catch {
+    services = [];
   }
 
   const featuredAchievements = achievements.map((a) => ({
@@ -32,7 +40,7 @@ export default async function CardWithForm() {
     <>
       <PhysicianJsonLd />
       <MedicalBusinessJsonLd />
-      <HomePageContent featuredAchievements={featuredAchievements} />
+      <HomePageContent featuredAchievements={featuredAchievements} services={services} />
     </>
   );
 }

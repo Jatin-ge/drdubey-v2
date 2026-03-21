@@ -104,14 +104,16 @@ export default async function BlogsPage({
                 href={`/blogs/${blog.slug}`}
                 className="group block bg-white rounded-xl shadow hover:shadow-lg transition-shadow overflow-hidden border border-gray-100"
               >
-                <div className="relative h-48 overflow-hidden bg-gray-100">
-                  {(blog.coverImage || blog.image1) && (
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+                  {(blog.coverImage || blog.image1) ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={blog.coverImage || blog.image1}
                       alt={blog.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+                  ) : (
+                    <span className="text-5xl">📰</span>
                   )}
                 </div>
                 <div className="p-5">

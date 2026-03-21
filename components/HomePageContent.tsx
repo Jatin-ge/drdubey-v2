@@ -23,6 +23,8 @@ import AchievementCollage from "@/components/Achievements/AchievementCollage";
 import UKHonour from "@/components/UKHonour/UKHonour";
 import ETAward from "@/components/ETAward/ETAward";
 import FeaturedAchievementsSection from "@/components/Achievements/FeaturedAchievementsSection";
+import LatestEvents from "@/components/home/LatestEvents";
+import LatestBlogs from "@/components/home/LatestBlogs";
 
 type FeaturedAchievement = {
   id: string;
@@ -35,9 +37,10 @@ type FeaturedAchievement = {
 
 interface HomePageContentProps {
   featuredAchievements?: FeaturedAchievement[];
+  services?: any[];
 }
 
-export default function HomePageContent({ featuredAchievements = [] }: HomePageContentProps) {
+export default function HomePageContent({ featuredAchievements = [], services = [] }: HomePageContentProps) {
   React.useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -52,18 +55,30 @@ export default function HomePageContent({ featuredAchievements = [] }: HomePageC
         <link rel="icon" href="/assets/images/logonew.png" />
       </head>
       <Navbar />
+      {/* 1. Hero */}
       <Card1 />
+      {/* 2. Stats */}
       <Stats />
+      {/* 3. Services */}
+      {services.length > 0 && <Services services={services} />}
+      {/* 4. Achievements */}
+      <FeaturedAchievementsSection achievements={featuredAchievements} />
+      <AchievementCollage />
       <UKHonour />
       <ETAward />
-      <AchievementCollage />
-      <FeaturedAchievementsSection achievements={featuredAchievements} />
+      {/* 5. Latest Events */}
+      <LatestEvents />
+      {/* 6. Testimonials carousel */}
+      <Testimonial />
+      {/* 7. Blog preview */}
+      <LatestBlogs />
+      {/* 8. CTA */}
+      <Booknow />
+      {/* Remaining content */}
       <Hero2 />
       <Certificate2 />
       <Certificate />
       <WhyChoose />
-      <Booknow />
-      <Testimonial />
       <GoogleMaps />
       <Form />
       <Footer />

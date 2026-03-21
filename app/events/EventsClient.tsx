@@ -114,6 +114,15 @@ const EventsClient = () => {
           <div className="h-1 w-24 bg-primary mx-auto rounded-full"></div>
         </div>
 
+        {events.length === 0 && (
+          <div className="text-center py-20 text-gray-500">
+            <p className="text-xl">
+              Events coming soon — check back for Dr. Dubay&apos;s latest
+              health camps and activities.
+            </p>
+          </div>
+        )}
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => (
             <motion.div

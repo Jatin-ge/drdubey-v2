@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar/navbar";
 import { ThemeProvider } from "@/components/Provider/ThemeProvider";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { ToastProvider } from "@/components/providers/toast-provider";
-import React, { useEffect } from "react";
-import GTM from "@/utils/GTM";
+import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import MobileBookingCTA from "@/components/ui/MobileBookingCTA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +21,8 @@ export default function RootLayout({
           <ToastProvider />
           <ModalProvider />
           {children}
+          <MobileBookingCTA />
+          <WhatsAppFloat />
         </ThemeProvider>
       </body>
     </html>

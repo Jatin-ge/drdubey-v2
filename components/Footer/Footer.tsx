@@ -177,6 +177,17 @@ const Footer = (props: Props) => {
               <p className="text-gray-600 dark:text-gray-400">
                 © {new Date().getFullYear()} Dr. Dheeraj Dubay. All rights reserved.
               </p>
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-500">
+                Developed &amp; maintained by{" "}
+                <a
+                  href="https://growthescalators.com"
+                  target="_blank"
+                  rel="dofollow"
+                  className="text-gray-700 dark:text-gray-300 underline underline-offset-2 hover:text-emerald-600 transition-colors"
+                >
+                  Growth Escalators
+                </a>
+              </p>
             </div>
           </div>
         </div>
