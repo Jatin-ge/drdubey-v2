@@ -6,6 +6,7 @@ import { ModalProvider } from "@/components/providers/modal-provider";
 import { ToastProvider } from "@/components/providers/toast-provider";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import MobileBookingCTA from "@/components/ui/MobileBookingCTA";
+import EmergencyBanner from "@/components/ui/EmergencyBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <ToastProvider />
           <ModalProvider />
+          <EmergencyBanner />
           {children}
           <MobileBookingCTA />
           <WhatsAppFloat />

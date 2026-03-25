@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer/Footer";
 import { defaultSEO } from "@/lib/seo.config";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { db } from "@/lib/db";
 
 export const revalidate = 3600;
@@ -105,6 +106,11 @@ export default async function AchievementDetailPage({
   return (
     <>
       <AchievementArticleJsonLd achievement={achievement} />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.drdubay.in" },
+        { name: "Achievements", url: "https://www.drdubay.in/achievements" },
+        { name: achievement.title, url: `https://www.drdubay.in/achievements/${achievement.slug}` },
+      ]} />
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-12">
         {/* Breadcrumb */}

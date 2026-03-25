@@ -24,6 +24,8 @@ import ETAward from "@/components/ETAward/ETAward";
 import FeaturedAchievementsSection from "@/components/Achievements/FeaturedAchievementsSection";
 import LatestEvents from "@/components/home/LatestEvents";
 import LatestBlogs from "@/components/home/LatestBlogs";
+import WrittenTestimonials from "@/components/home/WrittenTestimonials";
+import PricingSection from "@/components/home/PricingSection";
 
 type FeaturedAchievement = {
   id: string;
@@ -60,6 +62,8 @@ export default function HomePageContent({ featuredAchievements = [], services = 
       <Stats />
       {/* 3. Services */}
       {services.length > 0 && <Services services={services} />}
+      {/* 3b. Pricing */}
+      <PricingSection />
       {/* 4. Achievements */}
       <FeaturedAchievementsSection achievements={featuredAchievements} />
       <AchievementCollage />
@@ -67,7 +71,9 @@ export default function HomePageContent({ featuredAchievements = [], services = 
       <ETAward />
       {/* 5. Latest Events */}
       <LatestEvents />
-      {/* 6. Testimonials carousel */}
+      {/* 6. Written testimonials */}
+      <WrittenTestimonials />
+      {/* 6b. Testimonials carousel */}
       <Testimonial />
       {/* 7. Blog preview */}
       <LatestBlogs />

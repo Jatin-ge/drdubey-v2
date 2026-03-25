@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer/Footer";
 import { defaultSEO } from "@/lib/seo.config";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { db } from "@/lib/db";
 
 export const revalidate = 3600;
@@ -144,6 +145,11 @@ export default async function ServiceDetailPage({
     <>
       <ServiceJsonLd service={service} />
       <FaqJsonLd faqs={faqs} />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.drdubay.in" },
+        { name: "Services", url: "https://www.drdubay.in/services" },
+        { name: service.title, url: `https://www.drdubay.in/services/${service.slug}` },
+      ]} />
       <Navbar />
       <div className="container mx-auto px-4">
         <main className="mt-12 mb-16">

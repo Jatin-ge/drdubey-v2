@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /booking/
+Disallow: /_next/
+Sitemap: https://www.drdubay.in/sitemap.xml

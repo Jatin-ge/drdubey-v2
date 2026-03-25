@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar/navbar";
 import Footer from "@/components/Footer/Footer";
 import { defaultSEO } from "@/lib/seo.config";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { db } from "@/lib/db";
 
 export const revalidate = 3600;
@@ -128,6 +129,11 @@ export default async function BlogDetailPage({
   return (
     <>
       <BlogArticleJsonLd blog={blog} />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://www.drdubay.in" },
+        { name: "Blog", url: "https://www.drdubay.in/blogs" },
+        { name: blog.title, url: `https://www.drdubay.in/blogs/${blog.slug}` },
+      ]} />
       <Navbar />
       <div className="container mx-auto px-4">
         <main className="mt-12 mb-16">
