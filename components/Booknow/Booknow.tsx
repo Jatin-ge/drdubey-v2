@@ -20,10 +20,10 @@ const Booknow = (props: Props) => {
   return (
     <div className=" my-16">
       <div className="bg-[#E2FFF5] dark:bg-inherit p-10 flex flex-col items-center">
-        <h1 className="text-xl text-primary font-semibold">BOOK NOW</h1>
-        <h1 className="text-4xl md:text-5xl font-bold mt-2 text-gray-700 dark:text-gray-200 text-center">
+        <h2 className="text-xl text-primary font-semibold">BOOK NOW</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mt-2 text-gray-700 dark:text-gray-200 text-center">
           Book your medical appointment Today
-        </h1>
+        </h2>
         <div className="mt-8 flex flex-col lg:flex-row text-2xl font-semibold">
           {/* <div className="">
             <Button onClick={() => onOpen("selectCity")} className="border bg-transparent dark:bg-[#B9F7CD] text-black border-black px-12 py-4 m-2 flex items-center">

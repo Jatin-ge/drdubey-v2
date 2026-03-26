@@ -110,6 +110,7 @@ const Card1 = (props: Props) => {
                 className="relative w-full xl:max-w-lg xl:mx-auto 2xl:scale-125 rounded-2xl shadow-2xl"
                 src="/assets/images/hero.png"
                 alt="Dr. Dheeraj Dubay"
+                priority
               />
             </div>
           </div>

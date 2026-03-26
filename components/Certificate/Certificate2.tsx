@@ -24,11 +24,11 @@ const Certificate2 = (props: Props) => {
 
             {/* Content Section */}
             <div className="flex flex-col justify-center space-y-6">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white leading-tight">
                 Dr. Dubay Breaks
                 <span className="text-primary"> Forbes World Record </span>
                 for Highest Number of joint replacement surgeries in a single day.
-              </h1>
+              </h2>
               <p className="text-lg md:text-xl text-gray-700 dark:text-gray-400">
                 Dr. Dubay from Rajasthan, India, made history by performing{" "}
                 <b>34 joint replacement surgeries </b>

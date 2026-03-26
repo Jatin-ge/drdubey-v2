@@ -22,9 +22,9 @@ const UKHonour = () => {
     <section className="py-20 bg-gradient-to-b from-white to-[#f0f4ff]">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-primary">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary">
             UK Honour Recognition
-          </h1>
+          </h2>
           <p className="mt-4 text-lg md:text-xl text-gray-600">
             Celebrating excellence and recognition from the United Kingdom
           </p>

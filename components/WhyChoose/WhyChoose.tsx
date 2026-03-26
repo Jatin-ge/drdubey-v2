@@ -33,9 +33,9 @@ const WhyChoose = () => {
   return (
     <div className="w-[80%] mx-auto my-16 md:my-32">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-primary">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-primary">
           Why Choose Us?
-        </h1>
+        </h2>
         <p className="mt-4 text-lg md:text-xl text-gray-600">
           Discover the reasons why we stand out in the field of joint replacement.
         </p>

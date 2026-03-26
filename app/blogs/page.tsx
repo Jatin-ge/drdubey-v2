@@ -95,7 +95,26 @@ export default async function BlogsPage({
         )}
 
         {filtered.length === 0 ? (
-          <p className="text-center text-gray-400 py-20">No posts found.</p>
+          <div className="flex flex-col items-center justify-center py-24 text-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-16 w-16 text-gray-300 mb-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1.5}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+              />
+            </svg>
+            <h3 className="text-xl font-semibold text-gray-700 mb-2">No blog posts found</h3>
+            <p className="text-gray-400 max-w-md">
+              There are no blog posts matching your filter yet. Check back soon for new articles on orthopedic health.
+            </p>
+          </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((blog) => (

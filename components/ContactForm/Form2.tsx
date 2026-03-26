@@ -47,10 +47,10 @@ const ContactSection: React.FC = () => {
         <div className="max-w-xl mx-auto">
           <div className="text-center ">
             <div className="relative flex flex-col items-center">
-              <h1 className="text-5xl font-bold dark:text-white">
+              <h2 className="text-5xl font-bold dark:text-white">
                 {" "}
                 Our <span className="text-primary"> Contact</span>{" "}
-              </h1>
+              </h2>
               <div className="flex w-24 mt-1 mb-10 overflow-hidden rounded">
                 <div className="flex-1 h-2 bg-blue-200"></div>
                 <div className="flex-1 h-2 bg-blue-400"></div>

@@ -22,9 +22,9 @@ const ETAward = () => {
     <section className="py-20 bg-gradient-to-b from-[#f0f4ff] to-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-primary">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-primary">
             ET Inspiring Leaders Awards 2025
-          </h1>
+          </h2>
           <p className="mt-4 text-lg md:text-xl text-gray-600">
             Recognizing excellence and leadership in healthcare
           </p>
