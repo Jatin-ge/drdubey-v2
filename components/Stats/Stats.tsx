@@ -1,9 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 
 export const Stats = () => {
+  const [surgeryCount, setSurgeryCount] = useState(24000);
+
+  useEffect(() => {
+    fetch('/api/surgery-count')
+      .then(r => r.json())
+      .then(d => setSurgeryCount(d.count || 24000))
+      .catch(() => {});
+  }, []);
+
   const stats = [
     {
       title: "Surgeries in a Day",
@@ -11,11 +20,10 @@ export const Stats = () => {
       color: "bg-blue-500",
       suffix: "",
       isRecord: true,
-     
     },
     {
       title: "Successful Surgeries",
-      count: 24000,
+      count: surgeryCount,
       color: "bg-green-500",
       suffix: "+",
       isRecord: false,
