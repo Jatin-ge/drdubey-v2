@@ -5,6 +5,32 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const baseUrl = 'https://www.drdubay.in';
 
+const procedureSlugs = [
+  'robotic-knee-replacement', 'knee-replacement-surgery', 'hip-replacement-surgery',
+  'computer-navigation-surgery', 'zero-technique-knee-replacement', 'partial-knee-replacement',
+  'minimally-invasive-surgery', 'revision-knee-replacement', 'bilateral-knee-replacement',
+];
+
+const conditionSlugs = [
+  'knee-pain', 'osteoarthritis', 'rheumatoid-arthritis', 'hip-pain',
+  'avascular-necrosis', 'knee-stiffness', 'sports-injury-knee',
+];
+
+const hindiSlugs = [
+  'ghutne-ki-takleef', 'ghutne-ka-operation', 'kulhe-ka-dard',
+  'robotic-ghutna-pratiyaropan', 'gathiya-ka-ilaj', 'zero-technique-hindi',
+];
+
+const citySlugs = [
+  'knee-replacement-bikaner', 'knee-replacement-agra', 'knee-replacement-kota',
+  'knee-replacement-alwar', 'knee-replacement-ajmer', 'knee-replacement-sikar',
+  'hip-replacement-jaipur', 'joint-replacement-surgeon-jaipur',
+  'knee-replacement-bharatpur', 'knee-replacement-jhunjhunu', 'knee-replacement-churu',
+  'knee-replacement-mathura', 'knee-replacement-sawai-madhopur', 'knee-replacement-tonk',
+  'knee-replacement-dausa', 'knee-replacement-nagaur', 'knee-replacement-hanumangarh',
+  'knee-replacement-pali', 'knee-replacement-dholpur', 'knee-replacement-bundi',
+];
+
 const staticLinks = [
   // Main Pages
   { url: '/', changefreq: 'daily', priority: 1.0 },
@@ -16,6 +42,14 @@ const staticLinks = [
   { url: '/youtube', changefreq: 'monthly', priority: 0.6 },
   { url: '/contact', changefreq: 'yearly', priority: 0.5 },
   { url: '/events', changefreq: 'monthly', priority: 0.6 },
+  // Procedure pages
+  ...procedureSlugs.map(slug => ({ url: `/procedures/${slug}`, changefreq: 'weekly', priority: 0.9 })),
+  // Condition pages
+  ...conditionSlugs.map(slug => ({ url: `/conditions/${slug}`, changefreq: 'weekly', priority: 0.8 })),
+  // Hindi pages
+  ...hindiSlugs.map(slug => ({ url: `/hindi/${slug}`, changefreq: 'weekly', priority: 0.8 })),
+  // City pages
+  ...citySlugs.map(slug => ({ url: `/${slug}`, changefreq: 'monthly', priority: 0.7 })),
 ];
 
 function makeUrl({ url, changefreq, priority }) {

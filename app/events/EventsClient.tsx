@@ -92,6 +92,40 @@ const EventsClient = () => {
     );
   };
 
+  const eventSchema = events.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Dr. Dheeraj Dubay Events and OPD Camps",
+    "itemListElement": events.map((event, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Event",
+        "name": event.title,
+        "description": event.description || event.title,
+        "startDate": event.createdAt,
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Jaipur, Rajasthan",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jaipur",
+            "addressRegion": "Rajasthan",
+            "addressCountry": "IN"
+          }
+        },
+        "organizer": {
+          "@type": "Person",
+          "name": "Dr. Dheeraj Dubay",
+          "url": "https://www.drdubay.in/about"
+        },
+        "image": event.imageUrl || undefined
+      }
+    }))
+  } : null
+
   if (loading) {
     return (
       <>
@@ -105,6 +139,12 @@ const EventsClient = () => {
 
   return (
     <>
+      {eventSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
       <Navbar />
       <div className="max-w-6xl mx-auto py-12 px-4">
         <div className="text-center mb-12">
