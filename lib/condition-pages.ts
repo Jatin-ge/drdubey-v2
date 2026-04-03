@@ -137,10 +137,6 @@ export const CONDITION_PAGES: ConditionPage[] = [
         q: 'Is knee replacement painful?',
         a: 'Modern anaesthesia and pain management protocols make the surgery comfortable. Most patients report that post-surgery pain is actually less than the chronic pain they experienced before surgery.',
       },
-      {
-        q: 'What is the cost of knee pain treatment in Jaipur?',
-        a: 'Conservative treatments like physiotherapy and injections cost significantly less than surgery. Knee replacement surgery cost in Jaipur varies based on implant type, technique, and hospital. Contact our clinic for a personalised estimate.',
-      },
     ],
     relatedConditions: ['osteoarthritis', 'rheumatoid-arthritis', 'hip-pain'],
     schema: {

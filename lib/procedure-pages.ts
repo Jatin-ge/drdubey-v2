@@ -32,11 +32,6 @@ export interface ProcedurePage {
       description: string
     }[]
   }
-  costSection: {
-    heading: string
-    content: string
-    factors: string[]
-  }
   faqs: { q: string; a: string }[]
   relatedProcedures: string[]
   schema: {
@@ -122,18 +117,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Month 1-2', title: 'Increasing Independence', description: 'Most patients can walk without a frame, manage household activities, and sit comfortably. Driving is typically possible by 6 weeks.' },
         { period: 'Month 3', title: 'Near Normal Activity', description: 'Most patients report 80-90% improvement. Walking on uneven ground, light climbing, and most daily activities are comfortable.' },
         { period: 'Month 6+', title: 'Full Recovery', description: 'Complete recovery achieved for most patients. Walking, climbing, travel, and most physical activities are comfortable. The robotic implant is designed to last 20-25 years.' },
-      ],
-    },
-    costSection: {
-      heading: 'Cost of Robotic Knee Replacement in Jaipur',
-      content: "The cost of robotic knee replacement in Jaipur varies depending on the type of implant chosen, length of hospital stay, and specific patient requirements. Dr. Dubay's clinic works with all major insurance providers and TPA companies for cashless treatment. Government health schemes including CGHS and RGHS are also accepted. Contact us for a personalised cost estimate.",
-      factors: [
-        'Type of implant (standard, premium, or ultra-premium)',
-        'Single knee or bilateral (both knees) replacement',
-        'Length of hospital stay',
-        'Pre-existing conditions requiring additional management',
-        'Insurance coverage and TPA authorisation',
-        'Physiotherapy requirements',
       ],
     },
     faqs: [
@@ -231,18 +214,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Years 20+', title: 'Long-Term Success', description: 'With appropriate care and physiotherapy, modern knee implants function effectively for 20-25 years or more. Regular annual reviews with Dr. Dubay ensure long-term success.' },
       ],
     },
-    costSection: {
-      heading: 'Cost of Knee Replacement Surgery in Jaipur',
-      content: "Knee replacement surgery costs in Jaipur vary depending on implant type (standard, premium, or ultra-premium), whether one or both knees are being replaced, hospital room type, and individual patient requirements. Dr. Dubay's clinic works with all major insurance companies and TPA providers for cashless treatment. Government schemes including CGHS, RGHS, ESI, and Ayushman Bharat are also accepted. Contact us for a detailed cost breakdown.",
-      factors: [
-        'Implant brand and grade (standard, premium, or ultra-premium)',
-        'Unilateral (one knee) or bilateral (both knees) replacement',
-        'Hospital room category chosen',
-        'Duration of physiotherapy required',
-        'Insurance coverage and TPA pre-authorisation',
-        'Additional procedures if required (e.g. patella resurfacing)',
-      ],
-    },
     faqs: [
       { q: 'At what age should I consider knee replacement?', a: 'Knee replacement is recommended based on symptoms and quality of life, not age. Most patients are between 55-80 years old, but Dr. Dubay has successfully performed the procedure on patients from 40 to 90 years old. The key criteria is severity of pain and its impact on daily life, not a specific age threshold.' },
       { q: 'How long will I be in hospital after knee replacement?', a: "With Dr. Dubay's Zero technique fast-track protocol, most patients are discharged within 3-4 days of surgery. Some patients with straightforward cases and strong home support may be discharged in 2 days. The short stay does not mean you are rushed — it reflects the advanced recovery protocols used." },
@@ -335,18 +306,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Years 15-20+', title: 'Long-Term Success', description: 'Modern hip implants are engineered to last 15-25 years. Annual reviews ensure early detection of any wear. Many patients never need a second operation.' },
       ],
     },
-    costSection: {
-      heading: 'Cost of Hip Replacement in Jaipur',
-      content: "Hip replacement costs in Jaipur depend on implant material (metal-on-polyethylene, ceramic-on-ceramic, or metal-on-metal), hospital room choice, and individual patient factors. All major insurance companies and government health schemes are accepted. Contact Dr. Dubay's clinic for a personalised estimate.",
-      factors: [
-        'Implant type and material (standard or premium bearing surfaces)',
-        'Cemented vs uncemented fixation technique',
-        'Hospital room category',
-        'Length of physiotherapy required',
-        'Insurance type and TPA coverage',
-        'Bilateral hip replacement if both hips need treatment',
-      ],
-    },
     faqs: [
       { q: 'How long does hip replacement surgery take?', a: "Total hip replacement typically takes 60-90 minutes. Dr. Dubay's extensive experience means the surgery is performed efficiently with minimal operative time, which directly reduces anaesthesia exposure and surgical risks." },
       { q: 'What causes hip joint failure requiring replacement?', a: "The most common causes are osteoarthritis (wear and tear), rheumatoid arthritis, avascular necrosis (bone death due to reduced blood supply), hip fracture in elderly patients, and developmental hip dysplasia. Dr. Dubay assesses each case individually to recommend the most appropriate treatment." },
@@ -429,17 +388,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Week 1-2', title: 'Home Recovery', description: 'Walking with a frame, physiotherapy exercises, pain well controlled. Small additional wounds from tracker sites heal quickly.' },
         { period: 'Month 1-3', title: 'Normal Recovery', description: 'Recovery follows the same timeline as standard knee replacement. The benefit of navigation is seen in the long-term — better alignment means better long-term function.' },
         { period: 'Year 1-20+', title: 'Long-Term Benefit', description: 'The precision of navigation shows in the long term — more natural knee movement, less wear, and potentially longer implant life.' },
-      ],
-    },
-    costSection: {
-      heading: 'Cost of Computer Navigation Surgery in Jaipur',
-      content: 'Computer navigation surgery involves specialised equipment and software, which adds a modest cost compared to traditional surgery. However, the investment is often justified by better long-term outcomes and potentially avoiding revision surgery. Most insurance companies cover computer navigation surgery. Contact us for a personalised cost estimate.',
-      factors: [
-        'Navigation system usage fees',
-        'Implant type chosen',
-        'Hospital stay duration',
-        'Insurance coverage for navigation surgery',
-        'Whether single or bilateral procedure',
       ],
     },
     faqs: [
@@ -528,16 +476,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Month 1-3', title: 'Full Independence', description: 'Driving, shopping, managing household tasks, and social activities all become achievable well before conventional protocols would allow.' },
       ],
     },
-    costSection: {
-      heading: 'Cost of Zero Technique Surgery',
-      content: "The Zero technique is Dr. Dubay's standard approach for all suitable patients — it does not carry a premium cost. The shorter hospital stay associated with zero technique can actually reduce the total cost of the procedure compared to conventional approaches requiring longer hospitalisation.",
-      factors: [
-        'Implant type chosen',
-        'Hospital room category',
-        'Physiotherapy sessions required',
-        'Insurance coverage',
-      ],
-    },
     faqs: [
       { q: 'Is it really safe to walk the day after knee replacement?', a: "Yes — and it is not just safe, it is beneficial. Decades of research confirm that early mobilisation after knee replacement reduces blood clot risk, accelerates muscle recovery, reduces swelling, and improves overall outcomes. The Zero technique has been applied in thousands of Dr. Dubay's surgeries with an excellent safety record." },
       { q: 'Will I feel too much pain to walk on day one?', a: 'Modern multimodal pain management ensures pain is well controlled from the moment you wake from surgery. A combination of nerve blocks, spinal anaesthesia effects, oral medications, and local anaesthetic infiltration means most patients are surprised by how comfortable they feel. The physiotherapist will not push you beyond your comfort level.' },
@@ -619,16 +557,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Day 2-3', title: 'Home Discharge', description: 'Most partial replacement patients go home in 2-3 days — earlier than total replacement.' },
         { period: 'Week 2-4', title: 'Rapid Recovery', description: 'Many patients progress faster than after total replacement. Walking without aids often achievable by week 4.' },
         { period: 'Month 2-3', title: 'Full Activity', description: 'Return to full daily activities, driving, and most physical pursuits earlier than with total replacement.' },
-      ],
-    },
-    costSection: {
-      heading: 'Cost of Partial Knee Replacement in Jaipur',
-      content: 'Partial knee replacement typically costs less than total knee replacement due to smaller implant size and shorter procedure time. Insurance coverage varies — most policies cover partial replacement. Contact Dr. Dubay\'s clinic for a personalised estimate.',
-      factors: [
-        'Implant type for partial replacement',
-        'Hospital stay duration (typically shorter than total replacement)',
-        'Insurance coverage',
-        'Physiotherapy requirements',
       ],
     },
     faqs: [
@@ -713,16 +641,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Month 2-3', title: 'Full Recovery', description: 'Full recovery typically 2-4 weeks faster than with traditional open surgery.' },
       ],
     },
-    costSection: {
-      heading: 'Cost of Minimally Invasive Surgery in Jaipur',
-      content: 'Minimally invasive surgery may involve specialised instruments and slightly longer operative time, but the shorter hospital stay often offsets these costs. Most insurance companies cover minimally invasive joint replacement. Contact us for a personalised estimate.',
-      factors: [
-        'Whether navigation or robotic assistance is used alongside MIS',
-        'Implant type',
-        'Hospital stay duration',
-        'Insurance coverage',
-      ],
-    },
     faqs: [
       { q: 'Is minimally invasive surgery always better than traditional?', a: 'For suitable patients, minimally invasive surgery offers significant advantages in recovery speed and pain. However, it is technically more demanding and not appropriate for all cases. Dr. Dubay uses MIS when it genuinely benefits the patient — not routinely in all cases regardless of suitability.' },
       { q: 'Will the results of my knee replacement be as good with MIS?', a: 'When performed by an experienced surgeon on suitable patients, results are equivalent to traditional surgery in terms of implant function and longevity. The difference is in the recovery experience — faster, more comfortable, and with less pain.' },
@@ -801,17 +719,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Week 1-4', title: 'Hospital and Early Home', description: 'Hospital stay may be 5-7 days. Early recovery is slower than primary replacement — this is normal.' },
         { period: 'Month 1-3', title: 'Gradual Improvement', description: 'Recovery is slower than primary replacement. Progress is measured in weeks not days.' },
         { period: 'Month 6-12', title: 'Full Recovery', description: 'Full recovery after revision surgery takes longer — typically 6-12 months for the best outcome.' },
-      ],
-    },
-    costSection: {
-      heading: 'Cost of Revision Knee Replacement in Jaipur',
-      content: "Revision knee replacement is more expensive than primary replacement due to the complexity of the procedure, specialised implant systems required, longer operative time, and typically longer hospital stay. Insurance coverage varies — many policies cover revision surgery. Contact Dr. Dubay's team for a detailed estimate.",
-      factors: [
-        'Complexity of revision required — simple implant exchange vs complex reconstruction',
-        'Type of revision implant system needed',
-        'Whether infection treatment (two-stage revision) is required',
-        'Length of hospital stay',
-        'Bone graft requirements',
       ],
     },
     faqs: [
@@ -896,17 +803,6 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
         { period: 'Weeks 2-6', title: 'Home Recovery', description: 'More intensive initial recovery than single replacement. Both knees strengthen simultaneously. Walking frame transitions to crutches then stick.' },
         { period: 'Month 3', title: 'Good Mobility', description: 'Most bilateral patients are walking freely with good function in both knees by month 3.' },
         { period: 'Month 6', title: 'Full Recovery', description: 'Complete recovery. Both knees fully functional. The single recovery period pays dividends — patients are fully bilateral much earlier than if they had staged surgery.' },
-      ],
-    },
-    costSection: {
-      heading: 'Cost of Bilateral Knee Replacement in Jaipur',
-      content: 'Bilateral knee replacement costs more than single replacement but significantly less than two separate operations. The combined cost of single admission, single anaesthetic, and single physiotherapy period makes it the most cost-effective option for patients needing both knees replaced. Most insurance policies cover bilateral replacement. Contact us for a detailed estimate.',
-      factors: [
-        'Implant type and grade for both knees',
-        'Hospital stay duration',
-        'Blood transfusion if required',
-        'Physiotherapy requirements',
-        'Insurance coverage for bilateral procedure',
       ],
     },
     faqs: [

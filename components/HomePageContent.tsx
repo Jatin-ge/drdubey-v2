@@ -25,7 +25,6 @@ import FeaturedAchievementsSection from "@/components/Achievements/FeaturedAchie
 import LatestEvents from "@/components/home/LatestEvents";
 import LatestBlogs from "@/components/home/LatestBlogs";
 import WrittenTestimonials from "@/components/home/WrittenTestimonials";
-import PricingSection from "@/components/home/PricingSection";
 import { PROCEDURE_PAGES } from "@/lib/procedure-pages";
 import { CONDITION_PAGES } from "@/lib/condition-pages";
 import { HINDI_PAGES } from "@/lib/hindi-pages";
@@ -65,9 +64,6 @@ export default function HomePageContent({ featuredAchievements = [], services = 
       <Stats />
       {/* 3. Services */}
       {services.length > 0 && <Services services={services} />}
-      {/* 3b. Pricing */}
-      <PricingSection />
-
       {/* 3c. Procedures We Offer */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">

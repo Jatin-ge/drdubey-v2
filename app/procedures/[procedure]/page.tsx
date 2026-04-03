@@ -179,19 +179,6 @@ export default function ProcedurePage({ params }: { params: { procedure: string 
           <RecoveryTimeline steps={page.recovery.timeline} />
         </section>
 
-        {/* Cost */}
-        <section className="my-10 bg-blue-50 rounded-2xl p-6 md:p-8 border border-blue-100">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">{page.costSection.heading}</h2>
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">{page.costSection.content}</p>
-          <ul className="space-y-2">
-            {page.costSection.factors.map((f, i) => (
-              <li key={i} className="text-sm text-gray-700 flex gap-2">
-                <span className="text-blue-600">•</span>{f}
-              </li>
-            ))}
-          </ul>
-        </section>
-
         {/* FAQ */}
         <section className="my-10">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
