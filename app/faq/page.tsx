@@ -30,7 +30,7 @@ const faqs = [
   {
     question: "What is the success rate of joint replacement surgery?",
     answer:
-      "Dr. Dheeraj Dubay has performed over 24,000 successful joint replacement surgeries with a very high success rate. He holds the Forbes World Record for most joint replacements in a single day.",
+      "Dr. Dheeraj Dubay has performed over 35,000 successful joint replacement surgeries with a very high success rate. He holds the Forbes World Record for most joint replacements in a single day.",
   },
   {
     question: "How long do knee replacement implants last?",
@@ -60,7 +60,7 @@ const faqs = [
   {
     question: "Is Dr. Dheeraj Dubay available in Jaipur?",
     answer:
-      "Yes, Dr. Dubay operates at Shalby Multi-Specialty Hospital, Vaishali Nagar, Jaipur and at Dr. Dubay Hip & Knee Clinic, Vidhyadhar Nagar, Jaipur.",
+      "Yes, Dr. Dubay operates at Shalby Hospital, Vaishali Nagar, Jaipur and at Dr. Dubay Hip & Knee Clinic, Vidhyadhar Nagar, Jaipur.",
   },
   {
     question: "What is hip replacement surgery?",

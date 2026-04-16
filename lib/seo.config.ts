@@ -2,7 +2,7 @@ export const defaultSEO = {
   siteName: "Dr. Dheeraj Dubay",
   siteUrl: "https://www.drdubay.in",
   defaultTitle: "Dr. Dheeraj Dubay | Best Joint Replacement Surgeon in Jaipur",
-  defaultDescription: "Dr. Dheeraj Dubay - Senior Consultant Joint Replacement Surgery at Shalby Hospital Jaipur. 24,000+ successful surgeries, Forbes World Record holder, 16+ years experience.",
+  defaultDescription: "Dr. Dheeraj Dubay - Director, Robotic Joint Replacement Surgery at Shalby Hospital Jaipur. 35,000+ successful surgeries, Forbes World Record holder, 23+ years experience.",
   defaultKeywords: "joint replacement surgeon jaipur, knee replacement jaipur, hip replacement jaipur, best orthopedic surgeon rajasthan, dr dheeraj dubay",
   twitterHandle: "@drdheerajdubay",
   locale: "en_IN",

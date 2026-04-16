@@ -8,7 +8,7 @@ export const revalidate = 3600;
 export const metadata = generatePageMetadata({
   title: "Clinic Locations | Dr. Dheeraj Dubay - Joint Replacement Jaipur",
   description:
-    "Visit Dr. Dheeraj Dubay at Shalby Multi-Specialty Hospital Vaishali Nagar or Dr. Dubay Hip & Knee Clinic Vidhyadhar Nagar, Jaipur. Get directions, timings & contact info.",
+    "Visit Dr. Dheeraj Dubay at Shalby Hospital Vaishali Nagar or Dr. Dubay Hip & Knee Clinic Vidhyadhar Nagar, Jaipur. Get directions, timings & contact info.",
   slug: "locations",
   keywords:
     "dr dheeraj dubay clinic, shalby hospital jaipur, joint replacement clinic jaipur, knee replacement surgeon near me, hip replacement jaipur location",
@@ -16,7 +16,7 @@ export const metadata = generatePageMetadata({
 
 const locations = [
   {
-    name: "Shalby Multi-Specialty Hospital",
+    name: "Shalby Hospital",
     type: "Hospital",
     address: "Plot No. 4 & 5, Sector 2, Vidhyadhar Nagar, Jaipur, Rajasthan 302039",
     phone: "+91-8955373205",

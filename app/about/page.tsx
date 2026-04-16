@@ -5,7 +5,7 @@ export const revalidate = 3600;
 
 export const metadata = generatePageMetadata({
   title: "About Dr. Dheeraj Dubay | Joint Replacement Specialist Jaipur",
-  description: "Learn about Dr. Dheeraj Dubay - MBBS, MS Orthopedic, FJRS Germany. 16+ years experience, 24000+ surgeries, Forbes World Record holder.",
+  description: "Learn about Dr. Dheeraj Dubay - MBBS, MS Orthopedic, FJRS Germany. 23+ years experience, 35000+ surgeries, Forbes World Record holder.",
   slug: "about",
 });
 import Section2 from "@/components/AboutUs/Section2";

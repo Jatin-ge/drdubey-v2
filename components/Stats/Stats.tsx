@@ -4,12 +4,12 @@ import CountUp from "react-countup";
 import { motion } from "framer-motion";
 
 export const Stats = () => {
-  const [surgeryCount, setSurgeryCount] = useState(24000);
+  const [surgeryCount, setSurgeryCount] = useState(35000);
 
   useEffect(() => {
     fetch('/api/surgery-count')
       .then(r => r.json())
-      .then(d => setSurgeryCount(d.count || 24000))
+      .then(d => setSurgeryCount(d.count || 35000))
       .catch(() => {});
   }, []);
 
@@ -30,7 +30,7 @@ export const Stats = () => {
     },
     {
       title: "Happy Patients",
-      count: 30000,
+      count: 60000,
       color: "bg-purple-500",
       suffix: "+",
       isRecord: false,

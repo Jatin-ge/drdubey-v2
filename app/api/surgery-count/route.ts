@@ -8,10 +8,10 @@ export async function GET() {
     const count = await db.lead.count({
       where: { patientStatus: 'IPD' }
     })
-    const base = 24000
+    const base = 35000
     const total = Math.max(base, count)
     return NextResponse.json({ count: total })
   } catch {
-    return NextResponse.json({ count: 24000 })
+    return NextResponse.json({ count: 35000 })
   }
 }

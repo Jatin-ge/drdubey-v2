@@ -45,7 +45,7 @@ export const CONDITION_PAGES: ConditionPage[] = [
     title: 'Knee Pain',
     h1: 'Knee Pain Treatment in Jaipur — Dr. Dheeraj Dubay',
     metaTitle: 'Knee Pain Treatment Jaipur | Expert Orthopaedic Surgeon — Dr. Dheeraj Dubay',
-    metaDescription: 'Suffering from knee pain in Jaipur? Dr. Dheeraj Dubay offers expert diagnosis and treatment for all causes of knee pain. 24,000+ surgeries. Book consultation today.',
+    metaDescription: 'Suffering from knee pain in Jaipur? Dr. Dheeraj Dubay offers expert diagnosis and treatment for all causes of knee pain. 35,000+ surgeries. Book consultation today.',
     category: 'Knee Condition',
     intro: 'Knee pain is one of the most common orthopaedic complaints, affecting people of all ages. At his clinics in Jaipur, Dr. Dheeraj Dubay — Forbes World Record holder and leading knee replacement surgeon — provides comprehensive evaluation and personalised treatment plans ranging from physiotherapy to advanced robotic surgery.',
     whatIsIt: {
@@ -114,10 +114,10 @@ export const CONDITION_PAGES: ConditionPage[] = [
     },
     whyDrDubay: [
       'Forbes World Record holder — 170 knee replacements in 24 hours',
-      'Over 24,000 successful knee surgeries performed',
-      '16+ years of specialised orthopaedic experience in Jaipur',
+      'Over 35,000 successful knee surgeries performed',
+      '23+ years of specialised orthopaedic experience in Jaipur',
       'Expert in robotic-assisted and computer-navigated surgery for optimal outcomes',
-      'Practices at Shalby Multi-Specialty Hospital, Vaishali Nagar and Dr. Dubay Hip & Knee Clinic, Vidhyadhar Nagar',
+      'Practices at Shalby Hospital, Vaishali Nagar and Dr. Dubay Hip & Knee Clinic, Vidhyadhar Nagar',
       'Personalised non-surgical pathways before recommending surgery',
     ],
     faqs: [
@@ -151,7 +151,7 @@ export const CONDITION_PAGES: ConditionPage[] = [
     title: 'Osteoarthritis of the Knee',
     h1: 'Osteoarthritis Treatment in Jaipur — Dr. Dheeraj Dubay',
     metaTitle: 'Osteoarthritis Knee Treatment Jaipur | Dr. Dheeraj Dubay — Expert Surgeon',
-    metaDescription: 'Expert osteoarthritis knee treatment in Jaipur by Dr. Dheeraj Dubay. From conservative management to robotic knee replacement. 24,000+ surgeries. Book today.',
+    metaDescription: 'Expert osteoarthritis knee treatment in Jaipur by Dr. Dheeraj Dubay. From conservative management to robotic knee replacement. 35,000+ surgeries. Book today.',
     category: 'Degenerative Joint Disease',
     intro: 'Osteoarthritis (OA) is the most common form of arthritis, caused by the gradual breakdown of joint cartilage. Dr. Dheeraj Dubay offers the full spectrum of evidence-based treatments for knee osteoarthritis in Jaipur — from lifestyle modification and injections to robotic knee replacement surgery.',
     whatIsIt: {
@@ -217,7 +217,7 @@ export const CONDITION_PAGES: ConditionPage[] = [
     whyDrDubay: [
       'Pioneer of Zero-technique knee replacement — walk the same day as surgery',
       'Robotic and computer-navigated surgery expertise for precise implant positioning',
-      '24,000+ knee replacement surgeries over 16+ years',
+      '35,000+ knee replacement surgeries over 23+ years',
       'Comprehensive non-surgical protocols before recommending knee replacement',
       'Forbes World Record holder for most knee replacements in 24 hours',
       'Convenient clinics at Shalby Hospital Vaishali Nagar and Vidhyadhar Nagar, Jaipur',
@@ -320,7 +320,7 @@ export const CONDITION_PAGES: ConditionPage[] = [
       'Extensive experience with inflammatory arthritis joint destruction patterns',
       'Close collaboration with rheumatologists for combined medical-surgical care',
       'Expertise in complex RA knee replacements with bone loss management',
-      '24,000+ total joint surgeries with excellent outcomes in RA patients',
+      '35,000+ total joint surgeries with excellent outcomes in RA patients',
       'Advanced robotic techniques to optimise alignment in RA-deformed knees',
     ],
     faqs: [
@@ -419,9 +419,9 @@ export const CONDITION_PAGES: ConditionPage[] = [
     },
     whyDrDubay: [
       'Specialist in both hip and knee replacement surgery in Jaipur',
-      '16+ years of orthopaedic surgery experience',
+      '23+ years of orthopaedic surgery experience',
       'Minimally invasive techniques for reduced blood loss and faster recovery',
-      '24,000+ total joint replacement surgeries performed',
+      '35,000+ total joint replacement surgeries performed',
       'Comprehensive diagnostic workup to identify the true source of hip pain',
       'Multidisciplinary approach with physio and pain management teams',
     ],
@@ -516,7 +516,7 @@ export const CONDITION_PAGES: ConditionPage[] = [
       'Early diagnosis expertise — catches AVN before collapse allows joint-preserving treatment',
       'Experienced in core decompression and joint-preserving surgery for younger patients',
       'Advanced techniques in total hip replacement for AVN with bone loss',
-      '24,000+ joint surgeries with expertise in complex hip cases',
+      '35,000+ joint surgeries with expertise in complex hip cases',
       'Staged management approach — maximising time before replacement for young patients',
     ],
     faqs: [
@@ -611,8 +611,8 @@ export const CONDITION_PAGES: ConditionPage[] = [
       'Expert in diagnosing the exact cause of knee stiffness — not a one-size-fits-all approach',
       'Skilled in arthroscopic arthrolysis for post-surgical scarring',
       'Comprehensive physiotherapy protocols to maximise range of motion recovery',
-      '16+ years of orthopaedic surgery experience in Jaipur',
-      '24,000+ knee surgeries — extensive experience managing all types of stiffness',
+      '23+ years of orthopaedic surgery experience in Jaipur',
+      '35,000+ knee surgeries — extensive experience managing all types of stiffness',
     ],
     faqs: [
       {
@@ -711,7 +711,7 @@ export const CONDITION_PAGES: ConditionPage[] = [
       'Meniscal repair prioritised over removal to preserve long-term joint health',
       'Comprehensive return-to-sport rehabilitation protocols',
       'Expert in ACL reconstruction with modern graft techniques',
-      '16+ years of orthopaedic expertise and 24,000+ surgeries in Jaipur',
+      '23+ years of orthopaedic expertise and 35,000+ surgeries in Jaipur',
     ],
     faqs: [
       {

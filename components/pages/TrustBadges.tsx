@@ -7,12 +7,12 @@ export function TrustBadges() {
     },
     {
       icon: '⚕️',
-      label: '24,000+ Surgeries',
+      label: '35,000+ Surgeries',
       sub: 'Successful joint replacements',
     },
     {
       icon: '⭐',
-      label: '16+ Years Experience',
+      label: '23+ Years Experience',
       sub: 'Expert orthopaedic care',
     },
     {

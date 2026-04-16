@@ -75,14 +75,14 @@ const Footer = (props: Props) => {
               </Link>
               <p className="text-base text-gray-600 dark:text-gray-300">
                 Dr. Dheeraj is one of the leading joint replacement surgeons in
-                North India, with over 16 years of experience and more than 24,000 successful surgeries.
+                North India, with over 23 years of experience and more than 35,000 successful surgeries.
               </p>
               
               {/* Contact Info */}
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
                   <MapPinIcon className="w-5 h-5 text-emerald-500" />
-                  <span>Shalby Multi-Specialty Hospital, Jaipur</span>
+                  <span>Shalby Hospital, Jaipur</span>
                 </div>
               
               </div>
@@ -113,7 +113,7 @@ const Footer = (props: Props) => {
                 More Links
               </h3>
               <ul className="space-y-4">
-                {['Services', 'Gallery', 'Testimonials'].map((item) => (
+                {['Services', 'Articles', 'Podcasts', 'Testimonials'].map((item) => (
                   <li key={item}>
                     <Link 
                       href={`/${item.toLowerCase()}`}

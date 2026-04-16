@@ -106,7 +106,7 @@ export default function CityPage(
       }}>
         {[
           { icon: '🏆', label: 'Forbes World Record', sub: 'Most surgeries in a day' },
-          { icon: '⚕️', label: '24,000+ Surgeries', sub: 'Successful joint replacements' },
+          { icon: '⚕️', label: '35,000+ Surgeries', sub: 'Successful joint replacements' },
           { icon: '⚡', label: 'Zero Technique', sub: 'Walking within 24 hours' },
           { icon: '🎖️', label: 'Health Minister Award', sub: '3 consecutive years' },
         ].map(item => (

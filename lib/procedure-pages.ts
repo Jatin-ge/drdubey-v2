@@ -50,9 +50,9 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     title: 'Robotic Knee Replacement',
     h1: 'Robotic Knee Replacement Surgery in Jaipur',
     metaTitle: 'Robotic Knee Replacement Surgery Jaipur — Dr. Dheeraj Dubay',
-    metaDescription: 'Expert robotic-assisted knee replacement surgery in Jaipur by Dr. Dheeraj Dubay. Forbes World Record holder. 24,000+ successful surgeries. Book consultation today.',
+    metaDescription: 'Expert robotic-assisted knee replacement surgery in Jaipur by Dr. Dheeraj Dubay. Forbes World Record holder. 35,000+ successful surgeries. Book consultation today.',
     category: 'Advanced Procedure',
-    intro: 'Dr. Dheeraj Dubay offers robotic-assisted knee replacement surgery at Shalby Multi-Specialty Hospital, Jaipur — one of the most advanced orthopaedic procedures available in Rajasthan. Robotic technology allows precise, personalised implant placement that was impossible with traditional techniques, resulting in better outcomes and faster recovery.',
+    intro: 'Dr. Dheeraj Dubay offers robotic-assisted knee replacement surgery at Shalby Hospital, Jaipur — one of the most advanced orthopaedic procedures available in Rajasthan. Robotic technology allows precise, personalised implant placement that was impossible with traditional techniques, resulting in better outcomes and faster recovery.',
     whatIsIt: {
       heading: 'What is Robotic Knee Replacement Surgery?',
       content: "Robotic knee replacement is a cutting-edge surgical technique where a robotic arm assists the surgeon in performing the procedure with extraordinary precision. Before the surgery, a detailed 3D model of the patient's knee is created using CT scan data. The robotic system uses this model to create a personalised surgical plan specific to that patient's anatomy. During surgery, the robotic arm guides Dr. Dubay's movements to within a fraction of a millimetre, ensuring the implant is positioned exactly as planned. This level of precision is simply not achievable by hand alone, no matter how experienced the surgeon. The robot does not perform the surgery independently — Dr. Dubay is in complete control throughout. The robotic system acts as an intelligent assistant that prevents any movement outside the pre-planned boundaries, protecting the surrounding healthy tissue and ligaments from unnecessary damage. This results in a knee that feels more natural, lasts longer, and allows patients to return to activity faster than with traditional surgery.",
@@ -83,13 +83,13 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     },
     whyDrDubay: [
       'Forbes World Record holder for most joint replacement surgeries in a single day',
-      'Over 24,000 successful knee and hip replacement surgeries performed',
+      'Over 35,000 successful knee and hip replacement surgeries performed',
       "Pioneer of the Zero technique — patients walking within 24 hours of surgery",
       'Advanced training in computer navigation and robotic surgery techniques',
       'Awarded for Excellence in Joint Replacement by the Health Minister of Rajasthan for 3 consecutive years',
       'Recognised as Most Trusted Joint Replacement Surgeon of North India by the Central Health Minister',
       'UK Honour Recognition for outstanding contributions to orthopaedic surgery',
-      "Operating at Shalby Multi-Specialty Hospital — one of India's premier orthopaedic facilities",
+      "Operating at Shalby Hospital — one of India's premier orthopaedic facilities",
     ],
     candidateFor: {
       heading: 'Are You a Candidate for Robotic Knee Replacement?',
@@ -120,7 +120,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
       ],
     },
     faqs: [
-      { q: 'Is robotic knee replacement better than traditional surgery?', a: "Robotic surgery offers significantly higher precision in implant placement compared to traditional techniques. Studies show that robotic-assisted surgery results in more accurate alignment, less blood loss, less soft tissue damage, and faster recovery. However, the outcome also depends greatly on the surgeon's experience. Dr. Dubay combines advanced robotic technology with over 24,000 surgeries of experience for the best possible outcome." },
+      { q: 'Is robotic knee replacement better than traditional surgery?', a: "Robotic surgery offers significantly higher precision in implant placement compared to traditional techniques. Studies show that robotic-assisted surgery results in more accurate alignment, less blood loss, less soft tissue damage, and faster recovery. However, the outcome also depends greatly on the surgeon's experience. Dr. Dubay combines advanced robotic technology with over 35,000 surgeries of experience for the best possible outcome." },
       { q: 'Is the robot doing my surgery or is Dr. Dubay?', a: "Dr. Dubay is performing your surgery throughout. The robotic system is an advanced tool that assists him — similar to how GPS assists a skilled driver. The robot cannot operate independently. Dr. Dubay makes all surgical decisions; the robot helps execute them with extraordinary precision." },
       { q: 'How long does robotic knee replacement surgery take?', a: 'Robotic knee replacement typically takes 60-90 minutes per knee. The robotic planning adds a small amount of preparation time but significantly improves the precision of the actual surgery.' },
       { q: 'When can I walk after robotic knee replacement?', a: "With Dr. Dubay's Zero technique fast-track rehabilitation protocol, most patients stand and walk with support within 24 hours of surgery. By day 3-4, most patients are walking the hospital corridor independently with a frame." },
@@ -143,10 +143,10 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     slug: 'knee-replacement-surgery',
     title: 'Total Knee Replacement',
     h1: 'Total Knee Replacement Surgery in Jaipur',
-    metaTitle: 'Total Knee Replacement Surgery Jaipur — Dr. Dheeraj Dubay | 24,000+ Surgeries',
-    metaDescription: 'Expert total knee replacement surgery in Jaipur by Dr. Dheeraj Dubay. Forbes World Record holder with 24,000+ successful surgeries. Walk within 24 hours. Book today.',
+    metaTitle: 'Total Knee Replacement Surgery Jaipur — Dr. Dheeraj Dubay | 35,000+ Surgeries',
+    metaDescription: 'Expert total knee replacement surgery in Jaipur by Dr. Dheeraj Dubay. Forbes World Record holder with 35,000+ successful surgeries. Walk within 24 hours. Book today.',
     category: 'Joint Replacement',
-    intro: 'Total knee replacement is one of the most successful surgical procedures in modern medicine, with over 95% of patients reporting significant pain relief and improved mobility. Dr. Dheeraj Dubay has performed over 24,000 knee replacement surgeries at Shalby Hospital Jaipur, making him one of the highest-volume knee replacement surgeons in India. His pioneering Zero technique allows most patients to walk within 24 hours of surgery.',
+    intro: 'Total knee replacement is one of the most successful surgical procedures in modern medicine, with over 95% of patients reporting significant pain relief and improved mobility. Dr. Dheeraj Dubay has performed over 35,000 knee replacement surgeries at Shalby Hospital Jaipur, making him one of the highest-volume knee replacement surgeons in India. His pioneering Zero technique allows most patients to walk within 24 hours of surgery.',
     whatIsIt: {
       heading: 'What is Total Knee Replacement Surgery?',
       content: "Total knee replacement, also called total knee arthroplasty, is a surgical procedure where the damaged surfaces of the knee joint are removed and replaced with artificial components made of metal alloy, high-grade plastic, and sometimes ceramic. The surgery addresses the three compartments of the knee — the inner side (medial), outer side (lateral), and the kneecap (patella). The artificial components replicate the natural curves and movements of the knee, eliminating the bone-on-bone contact that causes severe pain in advanced arthritis. Modern knee implants are engineered to last 20-25 years and allow patients to resume activities including walking, swimming, cycling, and travel. The procedure has been performed for over 40 years and is considered one of the most reliable and predictable surgeries in all of medicine.",
@@ -178,7 +178,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     },
     whyDrDubay: [
       'Forbes World Record — most joint replacement surgeries performed in a single day (34 surgeries)',
-      '24,000+ successful knee replacement surgeries — among the highest volumes in India',
+      '35,000+ successful knee replacement surgeries — among the highest volumes in India',
       'Pioneer of the Zero technique — fast-track rehabilitation getting patients walking in 24 hours',
       'Expertise in computer navigation and robotic-assisted surgery for superior precision',
       'Training in Germany (FJRS fellowship) in advanced joint replacement techniques',
@@ -219,7 +219,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
       { q: 'How long will I be in hospital after knee replacement?', a: "With Dr. Dubay's Zero technique fast-track protocol, most patients are discharged within 3-4 days of surgery. Some patients with straightforward cases and strong home support may be discharged in 2 days. The short stay does not mean you are rushed — it reflects the advanced recovery protocols used." },
       { q: 'Is knee replacement surgery painful?', a: 'Modern pain management means most patients experience much less discomfort than expected. A combination of nerve blocks, spinal anaesthesia, oral medications, and physiotherapy techniques keeps pain well controlled. Most patients describe the experience as far more comfortable than they anticipated.' },
       { q: 'Can I have both knees replaced at the same time?', a: "Yes, bilateral knee replacement (both knees in one operation) is possible for suitable patients. Dr. Dubay evaluates each patient's overall health before recommending this approach. The advantage is one recovery period instead of two. For patients who are medically fit, it is a safe and efficient option." },
-      { q: 'How successful is knee replacement surgery?', a: "Total knee replacement has one of the highest success rates of any surgical procedure. Over 95% of patients report significant pain relief and improved function. Dr. Dubay's personal success rate across 24,000+ surgeries reflects a lifetime of specialisation in this single procedure." },
+      { q: 'How successful is knee replacement surgery?', a: "Total knee replacement has one of the highest success rates of any surgical procedure. Over 95% of patients report significant pain relief and improved function. Dr. Dubay's personal success rate across 35,000+ surgeries reflects a lifetime of specialisation in this single procedure." },
       { q: 'When can I drive after knee replacement?', a: "Most patients can drive again approximately 6 weeks after surgery, once they have sufficient muscle strength and reflexes to operate the vehicle safely. Dr. Dubay's team will advise based on your individual recovery progress." },
       { q: 'Will the knee feel completely natural after surgery?', a: 'Most patients describe the replaced knee as feeling very comfortable and allowing normal movement. Some patients notice a slight difference from a natural knee, particularly in very deep bending. However, the dramatic reduction in pain means the vast majority consider the outcome excellent or very good.' },
       { q: 'Is knee replacement covered by insurance?', a: "Yes, knee replacement surgery is covered by most health insurance policies in India. Dr. Dubay's team handles all TPA paperwork and pre-authorisation. Government employees under CGHS, RGHS, and ESI are also covered. Contact +91-8955373205 for insurance guidance." },
@@ -239,7 +239,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     title: 'Total Hip Replacement',
     h1: 'Total Hip Replacement Surgery in Jaipur',
     metaTitle: 'Total Hip Replacement Surgery Jaipur — Dr. Dheeraj Dubay',
-    metaDescription: 'Expert hip replacement surgery in Jaipur by Dr. Dheeraj Dubay. Minimally invasive techniques, fast recovery, 24,000+ surgeries. Book consultation today.',
+    metaDescription: 'Expert hip replacement surgery in Jaipur by Dr. Dheeraj Dubay. Minimally invasive techniques, fast recovery, 35,000+ surgeries. Book consultation today.',
     category: 'Joint Replacement',
     intro: 'Hip replacement surgery restores freedom of movement and eliminates the debilitating pain of advanced hip arthritis, avascular necrosis, or hip fractures. Dr. Dheeraj Dubay performs total hip replacement using the latest minimally invasive techniques at Shalby Hospital Jaipur, helping patients from across Rajasthan and North India return to active, pain-free lives.',
     whatIsIt: {
@@ -329,7 +329,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     title: 'Computer Navigation Surgery',
     h1: 'Computer Navigation Knee Replacement Surgery in Jaipur',
     metaTitle: 'Computer Navigation Knee Replacement Jaipur — Dr. Dheeraj Dubay',
-    metaDescription: 'Computer navigation guided knee replacement surgery in Jaipur by Dr. Dheeraj Dubay. Advanced technology for precise implant placement. 24,000+ surgeries. Book today.',
+    metaDescription: 'Computer navigation guided knee replacement surgery in Jaipur by Dr. Dheeraj Dubay. Advanced technology for precise implant placement. 35,000+ surgeries. Book today.',
     category: 'Advanced Procedure',
     intro: 'Computer navigation surgery uses sophisticated sensor technology and real-time computer guidance to help Dr. Dubay achieve precise implant alignment during knee replacement. This technology eliminates the guesswork from implant positioning, resulting in better long-term outcomes and more natural-feeling knees for patients.',
     whatIsIt: {
@@ -365,7 +365,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
       'Uses navigation for complex cases where standard techniques carry higher risk of misalignment',
       'Combines navigation technology with Zero technique for optimal precision and fast recovery',
       'One of limited surgeons in Rajasthan with advanced computer navigation expertise',
-      '24,000+ surgeries provide the baseline experience that makes technology use most effective',
+      '35,000+ surgeries provide the baseline experience that makes technology use most effective',
     ],
     candidateFor: {
       heading: 'Who Benefits Most from Computer Navigation?',
@@ -393,7 +393,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     faqs: [
       { q: 'What is the difference between computer navigation and robotic surgery?', a: "Computer navigation uses sensors and a computer screen to guide the surgeon but the surgeon's hands perform all movements freely. Robotic surgery uses an actual robotic arm that physically assists and constrains movement within pre-planned boundaries. Both are superior to traditional surgery — robotic surgery is generally considered more advanced and precise." },
       { q: 'Does computer navigation make the surgery safer?', a: 'Computer navigation significantly improves implant alignment accuracy and reduces the risk of misalignment. It also eliminates the need for intramedullary rods in the thigh bone, which reduces blood loss and fat embolism risk. These factors collectively make the procedure safer and more reliable.' },
-      { q: 'Is computer navigation surgery available in Jaipur?', a: "Yes, Dr. Dheeraj Dubay offers computer navigation surgery at Shalby Multi-Specialty Hospital, Jaipur. Dr. Dubay is one of a limited number of surgeons in Rajasthan with training and experience in this advanced technique." },
+      { q: 'Is computer navigation surgery available in Jaipur?', a: "Yes, Dr. Dheeraj Dubay offers computer navigation surgery at Shalby Hospital, Jaipur. Dr. Dubay is one of a limited number of surgeons in Rajasthan with training and experience in this advanced technique." },
       { q: 'Does navigation surgery take longer?', a: 'Computer navigation adds approximately 15-20 minutes to the procedure for tracker placement and calibration. However, this additional time is well justified by the significant improvement in implant alignment that results.' },
     ],
     relatedProcedures: ['robotic-knee-replacement', 'knee-replacement-surgery', 'zero-technique-knee-replacement'],
@@ -411,7 +411,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     title: 'Zero Technique Knee Replacement',
     h1: 'Zero Technique Knee Replacement — Walk in 24 Hours',
     metaTitle: "Zero Technique Knee Replacement Jaipur — Dr. Dheeraj Dubay | Walk in 24 Hours",
-    metaDescription: "Dr. Dheeraj Dubay's pioneering Zero technique knee replacement allows patients to walk within 24 hours of surgery. Fast-track rehabilitation. 24,000+ surgeries. Book today.",
+    metaDescription: "Dr. Dheeraj Dubay's pioneering Zero technique knee replacement allows patients to walk within 24 hours of surgery. Fast-track rehabilitation. 35,000+ surgeries. Book today.",
     category: 'Signature Technique',
     intro: "The Zero technique is Dr. Dheeraj Dubay's pioneering approach to knee replacement rehabilitation — a fast-track protocol that gets patients walking within 24 hours of surgery. While traditional knee replacement required weeks of bed rest, Dr. Dubay's Zero technique combines advanced surgical methods, modern pain management, and immediate physiotherapy to dramatically accelerate recovery without compromising safety.",
     whatIsIt: {
@@ -445,7 +445,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
     },
     whyDrDubay: [
       'Dr. Dubay developed and pioneered the Zero technique through years of research and refinement',
-      'The technique has been applied across 24,000+ surgeries with outstanding safety record',
+      'The technique has been applied across 35,000+ surgeries with outstanding safety record',
       "Zero technique is now the standard protocol at Dr. Dubay's clinic for all suitable patients",
       'Combines surgical skill with physiotherapy expertise and pain management innovation',
       "Results have been recognised nationally — contributing to Dr. Dubay's multiple excellence awards",
@@ -615,7 +615,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
       'Combines MIS approach with navigation or robotic assistance for maximum precision',
       'Zero technique rehabilitation amplifies the benefits of minimally invasive surgery',
       'Careful patient selection ensures MIS is used only when genuinely beneficial',
-      'Experience across 24,000+ surgeries allows confident use of advanced techniques',
+      'Experience across 35,000+ surgeries allows confident use of advanced techniques',
     ],
     candidateFor: {
       heading: 'Who is Suitable for Minimally Invasive Surgery?',
@@ -695,7 +695,7 @@ export const PROCEDURE_PAGES: ProcedurePage[] = [
       'Thorough pre-operative planning using advanced imaging to anticipate challenges',
       'Access to a full range of revision implant options at Shalby Hospital',
       'Expertise in managing periprosthetic infection — the most complex revision scenario',
-      '24,000+ primary surgeries provide the foundation for handling complex revisions',
+      '35,000+ primary surgeries provide the foundation for handling complex revisions',
     ],
     candidateFor: {
       heading: 'When is Revision Surgery Needed?',

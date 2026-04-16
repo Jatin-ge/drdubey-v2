@@ -3,7 +3,7 @@ export const PhysicianJsonLd = () => {
     "@context": "https://schema.org",
     "@type": "Physician",
     "name": "Dr. Dheeraj Dubay",
-    "description": "Senior Consultant Joint Replacement Surgery with 16+ years experience and 24,000+ successful surgeries",
+    "description": "Director, Robotic Joint Replacement Surgery with 23+ years experience and 35,000+ successful surgeries",
     "url": "https://www.drdubay.in",
     "telephone": "+91-8955373205",
     "email": "connect@drdubay.in",
@@ -16,7 +16,7 @@ export const PhysicianJsonLd = () => {
     "medicalSpecialty": "Orthopedic Surgery",
     "worksFor": {
       "@type": "Hospital",
-      "name": "Shalby Multi-Specialty Hospital",
+      "name": "Shalby Hospital",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "200 Feet Bypass Road, Vaishali Nagar",
