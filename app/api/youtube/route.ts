@@ -8,7 +8,7 @@ export async function GET() {
     });
     return NextResponse.json(videos);
   } catch (error) {
-    console.log("[YOUTUBE_GET]", error);
+    console.error("[YOUTUBE_GET]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
@@ -16,7 +16,6 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const values = await req.json();
-    console.log("values", values);
 
     const video = await db.youTube.create({
       data: {
@@ -26,7 +25,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(video);
   } catch (error) {
-    console.log("[VIDEO_CREATE]", error);
+    console.error("[VIDEO_CREATE]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

@@ -20,7 +20,7 @@ export default function LatestEvents() {
       .then((data) => {
         if (Array.isArray(data)) setEvents(data.slice(0, 3));
       })
-      .catch(() => {});
+      .catch(e => console.error('[LatestEvents/fetch]', e));
   }, []);
 
   if (events.length === 0) return null;

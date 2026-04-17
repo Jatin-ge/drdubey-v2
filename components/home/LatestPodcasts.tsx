@@ -23,7 +23,7 @@ export default function LatestPodcasts() {
     fetch(`${baseUrl}/api/youtube`)
       .then(r => r.json())
       .then(d => setVideos(Array.isArray(d) ? d.slice(0, 3) : []))
-      .catch(() => {})
+      .catch(e => console.error('[LatestPodcasts/fetch]', e))
   }, [])
 
   if (videos.length === 0) return null

@@ -10,7 +10,7 @@ export const Stats = () => {
     fetch('/api/surgery-count')
       .then(r => r.json())
       .then(d => setSurgeryCount(d.count || 35000))
-      .catch(() => {});
+      .catch(e => console.error('[Stats/surgery-count]', e));
   }, []);
 
   const stats = [

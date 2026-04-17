@@ -14,7 +14,7 @@ export async function GET() {
     });
     return NextResponse.json(achievements);
   } catch (error) {
-    console.log("[ACHIEVEMENTS_PUBLIC_GET]", error);
+    console.error("[ACHIEVEMENTS_PUBLIC_GET]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

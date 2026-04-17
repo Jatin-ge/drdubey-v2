@@ -11,7 +11,7 @@ export async function GET() {
     });
     return NextResponse.json(blogs);
   } catch (error) {
-    console.log("[BLOGS_PUBLIC_GET]", error);
+    console.error("[BLOGS_PUBLIC_GET]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

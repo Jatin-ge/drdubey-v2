@@ -17,7 +17,7 @@ export async function GET(
     }
     return NextResponse.json(blog);
   } catch (error) {
-    console.log("[BLOG_SLUG_GET]", error);
+    console.error("[BLOG_SLUG_GET]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

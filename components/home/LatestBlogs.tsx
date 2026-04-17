@@ -22,7 +22,7 @@ export default function LatestBlogs() {
       .then((data) => {
         if (Array.isArray(data)) setBlogs(data.slice(0, 3));
       })
-      .catch(() => {});
+      .catch(e => console.error('[LatestBlogs/fetch]', e));
   }, []);
 
   if (blogs.length === 0) return null;
