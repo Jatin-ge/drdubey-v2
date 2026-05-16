@@ -1,34 +1,52 @@
 "use client";
 import axios from "axios";
-import { Instagram, Linkedin } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { AiFillLinkedin, AiFillInstagram, AiFillYoutube, AiFillFacebook } from "react-icons/ai";
-import emailjs from "emailjs-com";
+import { AiFillLinkedin, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const ContactSection: React.FC = () => {
-  const handleClick = async (event: any) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleClick = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const formFields = event.currentTarget;
 
-    const formFields = event.target;
-    const fullNameInput =
-      formFields.first_name.value + " " + formFields.last_name.value;
-    const emailInput = formFields.email.value;
-    const messageInput = formFields.message.value;
+    const firstName = (formFields.first_name as HTMLInputElement).value.trim();
+    const lastName = (formFields.last_name as HTMLInputElement).value.trim();
+    const emailInput = (formFields.email as HTMLInputElement).value.trim();
+    const messageInput = (formFields.message as HTMLTextAreaElement).value.trim();
+    const fullNameInput = `${firstName} ${lastName}`.trim();
 
+    if (!firstName) {
+      toast.error("Please enter your first name.");
+      return;
+    }
+    if (!emailInput || !EMAIL_REGEX.test(emailInput)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (!messageInput) {
+      toast.error("Please write a message before sending.");
+      return;
+    }
+
+    setIsSubmitting(true);
     try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        formFields,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID!
-      );
-      toast.success("Thanks for Contacting us!");
+      await axios.post("/api/contact", {
+        fullNameInput,
+        emailInput,
+        messageInput,
+      });
+      toast.success("Thanks for contacting us! We'll get back to you soon.");
       formFields.reset();
     } catch (error) {
-      console.log(error);
-      toast.error("Failed to send message. Please try again.");
+      console.error("[ContactForm] submit failed:", error);
+      toast.error("Couldn't send your message. Please try again or WhatsApp us at +91 8955373205.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -157,6 +175,8 @@ const ContactSection: React.FC = () => {
                   type="text"
                   placeholder="First Name.."
                   name="first_name"
+                  required
+                  disabled={isSubmitting}
                 />
               </div>
               <div className="w-full px-2 lg:w-1/2">
@@ -165,6 +185,7 @@ const ContactSection: React.FC = () => {
                   type="text"
                   placeholder="Last Name.."
                   name="last_name"
+                  disabled={isSubmitting}
                 />
               </div>
             </div>
@@ -173,15 +194,23 @@ const ContactSection: React.FC = () => {
               type="email"
               placeholder="abc@gmail.com"
               name="email"
+              required
+              disabled={isSubmitting}
             />
             <textarea
               rows={4}
               placeholder="Write a message..."
               className="block w-full px-4 mb-4 leading-tight text-gray-700 border rounded bg-gray-50 dark:placeholder-gray-400 py-7 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-700 "
               name="message"
+              required
+              disabled={isSubmitting}
             />
-            <button className="w-full py-4 text-sm font-bold leading-normal text-white transition-all duration-300 bg-primary rounded-md dark:bg-primary dark:hover:bg-primary hover:bg-blue-700">
-              Send Message
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full py-4 text-sm font-bold leading-normal text-white transition-all duration-300 bg-primary rounded-md dark:bg-primary dark:hover:bg-primary hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
