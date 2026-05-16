@@ -30,7 +30,7 @@ const Card1 = (props: Props) => {
                 <span className="font-bold text-emerald-600 dark:text-emerald-400">
                   23 years of experience
                 </span>{" "}
-                in the field of Joint Replacement Surgeries and is well wersed
+                in the field of Joint Replacement Surgeries and is well versed
                 with latest techniques such as computer navigation and minimally
                 invasive surgeries. Now he is performing replacement surgeries
                 at Shalby Hospital, Jaipur. He has done more

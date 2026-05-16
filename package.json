@@ -36,7 +36,6 @@
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "date-fns": "^2.30.0",
-    "emailjs-com": "^3.2.0",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
     "jspdf": "^2.5.1",

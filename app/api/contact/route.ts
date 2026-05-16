@@ -1,27 +1,27 @@
-import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-import { InitialProfile } from "@/lib/initial-profile";
-import { redirect } from "next/navigation";
 import { NextResponse } from "next/server";
 
-export async function POST(
-    req: Request,
-)
+export async function POST(req: Request) {
+  try {
+    const { fullNameInput, emailInput, phoneInput, messageInput } = await req.json();
 
-{  
-  try{ 
+    if (!fullNameInput || !emailInput || !messageInput) {
+      return NextResponse.json(
+        { error: "Name, email, and message are required." },
+        { status: 400 }
+      );
+    }
 
-    const {fullNameInput, emailInput, messageInput} = await req.json();
-
-    const contact  = await db.contactUs.create({
-      data:{
+    const contact = await db.contactUs.create({
+      data: {
         name: fullNameInput,
         email: emailInput,
+        phone: phoneInput || null,
         message: messageInput,
-      }
-})
-      
-      return NextResponse.json(contact);
+      },
+    });
+
+    return NextResponse.json(contact);
   } catch (error) {
     console.error("[CONTACT_POST]", error);
     return new NextResponse("Internal Error", { status: 500 });

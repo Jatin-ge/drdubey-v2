@@ -3,6 +3,10 @@ import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
+import { PhoneIcon } from "lucide-react";
+
+const PHONE_NUMBER_DISPLAY = "+91 89553 73205";
+const PHONE_NUMBER_TEL = "+918955373205";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -33,7 +37,7 @@ const Navbar = () => {
                     <span>
                       <Image
                         src="/assets/images/logofinalbg.png"
-                        alt="N"
+                        alt="Dr. Dheeraj Dubay — Joint Replacement Surgeon, Jaipur"
                         width={150}
                         height={150}
                         className="w-[60%]"
@@ -78,6 +82,13 @@ const Navbar = () => {
                         {link.label}
                       </Link>
                     ))}
+                    <a
+                      href={`tel:${PHONE_NUMBER_TEL}`}
+                      className="mt-3 w-full inline-flex items-center justify-center gap-2 px-4 py-3 -ml-4 bg-primary text-white font-semibold rounded-md hover:bg-blue-700 transition-colors"
+                    >
+                      <PhoneIcon className="w-4 h-4" />
+                      Call {PHONE_NUMBER_DISPLAY}
+                    </a>
                   </>
                 </Disclosure.Panel>
               </div>
@@ -101,7 +112,15 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="hidden mr-3 space-x-4 lg:flex nav__item text-[#EE8A27]">
+        <div className="hidden mr-3 items-center space-x-3 lg:flex nav__item text-[#EE8A27]">
+          <a
+            href={`tel:${PHONE_NUMBER_TEL}`}
+            aria-label={`Call ${PHONE_NUMBER_DISPLAY}`}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-md hover:bg-blue-700 transition-colors"
+          >
+            <PhoneIcon className="w-4 h-4" />
+            <span>{PHONE_NUMBER_DISPLAY}</span>
+          </a>
           <ThemeChanger />
         </div>
       </nav>

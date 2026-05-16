@@ -1,32 +1,7 @@
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Button } from "../ui/button";
-import { useModal } from "@/hooks/use-modal-store";
+import React from "react";
 import { getWhatsAppBookingUrl } from "@/lib/whatsapp-booking";
-const Hero = ({ heading, message }: any) => {
-  const handleClick = () => {
-    router.push("/booking");
-  };
-  const { onOpen } = useModal();
-  const router = useRouter();
-  const [showCityDropdown, setShowCityDropdown] = useState(false);
-  const [selectedCity, setSelectedCity] = useState<string | null>(null);
 
-  const handleCitySelect = (city: string) => {
-    setSelectedCity(city);
-    router.push(`/booking/${city}`);
-    setShowCityDropdown(false);
-  };
-
-  const handleBookAppointment = () => {
-    setShowCityDropdown(true);
-  };
-
-  const handleNavigateToBooking = () => {
-    if (selectedCity) {
-      router.push(`/booking/${encodeURIComponent(selectedCity)}`);
-    }
-  };
+const Hero = ({ heading, message }: { heading: string; message: string }) => {
   return (
     <div className="flex items-center justify-center h-screen mb-12 bg-fixed bg-center bg-cover custom-img">
       {/* Overlay */}

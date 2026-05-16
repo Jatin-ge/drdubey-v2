@@ -6,6 +6,7 @@ import { AiFillLinkedin, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_REGEX = /^[+\d][\d\s()-]{6,}$/;
 
 const ContactSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,8 +18,17 @@ const ContactSection: React.FC = () => {
     const firstName = (formFields.first_name as HTMLInputElement).value.trim();
     const lastName = (formFields.last_name as HTMLInputElement).value.trim();
     const emailInput = (formFields.email as HTMLInputElement).value.trim();
+    const phoneInput = (formFields.phone as HTMLInputElement).value.trim();
     const messageInput = (formFields.message as HTMLTextAreaElement).value.trim();
+    const honeypot = (formFields.elements.namedItem("website") as HTMLInputElement)?.value || "";
     const fullNameInput = `${firstName} ${lastName}`.trim();
+
+    // Honeypot: bots fill hidden fields; humans don't.
+    if (honeypot) {
+      toast.success("Thanks for contacting us! We'll get back to you soon.");
+      formFields.reset();
+      return;
+    }
 
     if (!firstName) {
       toast.error("Please enter your first name.");
@@ -26,6 +36,10 @@ const ContactSection: React.FC = () => {
     }
     if (!emailInput || !EMAIL_REGEX.test(emailInput)) {
       toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (phoneInput && !PHONE_REGEX.test(phoneInput)) {
+      toast.error("Please enter a valid phone number (or leave it blank).");
       return;
     }
     if (!messageInput) {
@@ -38,13 +52,15 @@ const ContactSection: React.FC = () => {
       await axios.post("/api/contact", {
         fullNameInput,
         emailInput,
+        phoneInput: phoneInput || undefined,
         messageInput,
       });
       toast.success("Thanks for contacting us! We'll get back to you soon.");
       formFields.reset();
-    } catch (error) {
-      console.error("[ContactForm] submit failed:", error);
-      toast.error("Couldn't send your message. Please try again or WhatsApp us at +91 8955373205.");
+    } catch {
+      toast.error(
+        "Couldn't send your message. Please try again or WhatsApp us at +91 89553 73205."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -162,45 +178,102 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
         <div className="px-8 py-8 bg-white border rounded-md shadow-md dark:border-gray-800 dark:bg-gray-800">
-          <form onSubmit={handleClick}>
+          <form onSubmit={handleClick} noValidate>
             <div className="mb-6">
-              <h2 className="text-xl font-bold text-gray-00 dark:text-gray-400">
+              <h2 className="text-xl font-bold text-gray-700 dark:text-gray-400">
                 Please send message for further information!{" "}
               </h2>
             </div>
+            {/* Honeypot field — hidden from users, only bots fill it */}
+            <div className="absolute -left-[9999px] w-0 h-0 overflow-hidden" aria-hidden="true">
+              <label htmlFor="website">Website (leave blank)</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="flex flex-wrap mb-4 -mx-2">
               <div className="w-full px-2 mb-4 lg:mb-0 lg:w-1/2">
+                <label
+                  htmlFor="first_name"
+                  className="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                  First Name <span className="text-red-500">*</span>
+                </label>
                 <input
+                  id="first_name"
                   className="w-full px-3 py-2 leading-loose border rounded-md bg-gray-50 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700"
                   type="text"
-                  placeholder="First Name.."
+                  placeholder="Your first name"
                   name="first_name"
                   required
                   disabled={isSubmitting}
+                  autoComplete="given-name"
                 />
               </div>
               <div className="w-full px-2 lg:w-1/2">
+                <label
+                  htmlFor="last_name"
+                  className="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                  Last Name
+                </label>
                 <input
+                  id="last_name"
                   className="w-full px-3 py-2 leading-loose border rounded-md bg-gray-50 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700"
                   type="text"
-                  placeholder="Last Name.."
+                  placeholder="Your last name"
                   name="last_name"
                   disabled={isSubmitting}
+                  autoComplete="family-name"
                 />
               </div>
             </div>
+            <label
+              htmlFor="email"
+              className="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
+              Email <span className="text-red-500">*</span>
+            </label>
             <input
+              id="email"
               className="w-full px-3 py-2 mb-4 leading-loose border rounded-md bg-gray-50 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700"
               type="email"
-              placeholder="abc@gmail.com"
+              placeholder="you@example.com"
               name="email"
               required
               disabled={isSubmitting}
+              autoComplete="email"
             />
+            <label
+              htmlFor="phone"
+              className="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
+              Phone <span className="text-gray-400 font-normal">(recommended &mdash; we&apos;ll call back faster)</span>
+            </label>
+            <input
+              id="phone"
+              className="w-full px-3 py-2 mb-4 leading-loose border rounded-md bg-gray-50 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700"
+              type="tel"
+              placeholder="+91 98765 43210"
+              name="phone"
+              disabled={isSubmitting}
+              autoComplete="tel"
+            />
+            <label
+              htmlFor="message"
+              className="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
+              Message <span className="text-red-500">*</span>
+            </label>
             <textarea
+              id="message"
               rows={4}
-              placeholder="Write a message..."
-              className="block w-full px-4 mb-4 leading-tight text-gray-700 border rounded bg-gray-50 dark:placeholder-gray-400 py-7 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-700 "
+              placeholder="Tell us briefly what you're looking for (e.g. knee pain consultation in Jaipur)..."
+              className="block w-full px-4 mb-4 leading-tight text-gray-700 border rounded bg-gray-50 dark:placeholder-gray-400 py-3 dark:text-gray-400 dark:border-gray-800 dark:bg-gray-700 "
               name="message"
               required
               disabled={isSubmitting}

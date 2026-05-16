@@ -51,7 +51,7 @@ const Section2 = (props: Props) => {
                   width={1200}
                   height={1200}
                   src={"/assets/images/hero2.JPG"}
-                  alt="aboutimage"
+                  alt="Dr. Dheeraj Dubay, Joint Replacement Surgeon at Shalby Hospital Jaipur"
                   className="relative z-10 object-cover w-full h-full rounded"
                 />
                 <div className="absolute bottom-0 right-0 z-10 p-4 bg-white shadow sm:p-8 dark:text-gray-300 dark:bg-gray-800 ">

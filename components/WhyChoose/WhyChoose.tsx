@@ -1,35 +1,9 @@
 import { CheckCircle } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { Button } from "../ui/button";
-import { useModal } from "@/hooks/use-modal-store";
 import AwardsSection from "../Awards/AwardsSection";
 
 const WhyChoose = () => {
-  const router = useRouter();
-  const [showCityDropdown, setShowCityDropdown] = useState(false);
-  const [selectedCity, setSelectedCity] = useState<string | null>(null);
-
-  const { onOpen } = useModal();
-
-  const handleCitySelect = (city: string) => {
-    setSelectedCity(city);
-    router.push(`/booking/${city}`);
-    setShowCityDropdown(false);
-  };
-
-  // const handleBookAppointment = () => {
-  //   setShowCityDropdown(true);
-  // };
-
-  const handleNavigateToBooking = () => {
-    if (selectedCity) {
-      router.push(`/booking/${encodeURIComponent(selectedCity)}`);
-    }
-  };
-
   return (
     <div className="w-[80%] mx-auto my-16 md:my-32">
       <div className="text-center mb-12">
